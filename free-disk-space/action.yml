@@ -48,6 +48,8 @@ runs:
   using: "composite"
   steps:
     - shell: bash
+      env:
+        DOTNET: ${{ inputs.dotnet }}
       run: |
 
         # ======
@@ -142,7 +144,7 @@ runs:
 
         # Option: Remove .NET runtime
 
-        if [[ ${{ inputs.dotnet }} == 'true' ]]; then
+        if [[ "$DOTNET" == 'true' ]]; then
           BEFORE=$(getAvailableSpace)
 
           # https://github.community/t/bigger-github-hosted-runners-disk-space/17267/11
