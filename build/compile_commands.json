@@ -1,0 +1,362 @@
+[
+{
+  "directory": "/home/runner/work/ggml-org-central/ggml-org-central/build/src",
+  "command": "/usr/bin/cc -DGGML_BUILD -DGGML_SCHED_MAX_COPIES=4 -DGGML_SHARED -D_GNU_SOURCE -D_XOPEN_SOURCE=600 -Dggml_base_EXPORTS -I/home/runner/work/ggml-org-central/ggml-org-central/ggml/src/. -I/home/runner/work/ggml-org-central/ggml-org-central/ggml/src/../include -O3 -DNDEBUG -std=gnu11 -fPIC -Wshadow -Wstrict-prototypes -Wpointer-arith -Wmissing-prototypes -Werror=implicit-int -Werror=implicit-function-declaration -Wall -Wextra -Wpedantic -Wcast-qual -Wno-unused-function -Wdouble-promotion -o CMakeFiles/ggml-base.dir/ggml.c.o -c /home/runner/work/ggml-org-central/ggml-org-central/ggml/src/ggml.c",
+  "file": "/home/runner/work/ggml-org-central/ggml-org-central/ggml/src/ggml.c",
+  "output": "src/CMakeFiles/ggml-base.dir/ggml.c.o"
+},
+{
+  "directory": "/home/runner/work/ggml-org-central/ggml-org-central/build/src",
+  "command": "/usr/bin/c++ -DGGML_BUILD -DGGML_SCHED_MAX_COPIES=4 -DGGML_SHARED -D_GNU_SOURCE -D_XOPEN_SOURCE=600 -Dggml_base_EXPORTS -I/home/runner/work/ggml-org-central/ggml-org-central/ggml/src/. -I/home/runner/work/ggml-org-central/ggml-org-central/ggml/src/../include -O3 -DNDEBUG -std=gnu++17 -fPIC -Wmissing-declarations -Wmissing-noreturn -Wall -Wextra -Wpedantic -Wcast-qual -Wno-unused-function -Wno-array-bounds -Wextra-semi -o CMakeFiles/ggml-base.dir/ggml.cpp.o -c /home/runner/work/ggml-org-central/ggml-org-central/ggml/src/ggml.cpp",
+  "file": "/home/runner/work/ggml-org-central/ggml-org-central/ggml/src/ggml.cpp",
+  "output": "src/CMakeFiles/ggml-base.dir/ggml.cpp.o"
+},
+{
+  "directory": "/home/runner/work/ggml-org-central/ggml-org-central/build/src",
+  "command": "/usr/bin/cc -DGGML_BUILD -DGGML_SCHED_MAX_COPIES=4 -DGGML_SHARED -D_GNU_SOURCE -D_XOPEN_SOURCE=600 -Dggml_base_EXPORTS -I/home/runner/work/ggml-org-central/ggml-org-central/ggml/src/. -I/home/runner/work/ggml-org-central/ggml-org-central/ggml/src/../include -O3 -DNDEBUG -std=gnu11 -fPIC -Wshadow -Wstrict-prototypes -Wpointer-arith -Wmissing-prototypes -Werror=implicit-int -Werror=implicit-function-declaration -Wall -Wextra -Wpedantic -Wcast-qual -Wno-unused-function -Wdouble-promotion -o CMakeFiles/ggml-base.dir/ggml-alloc.c.o -c /home/runner/work/ggml-org-central/ggml-org-central/ggml/src/ggml-alloc.c",
+  "file": "/home/runner/work/ggml-org-central/ggml-org-central/ggml/src/ggml-alloc.c",
+  "output": "src/CMakeFiles/ggml-base.dir/ggml-alloc.c.o"
+},
+{
+  "directory": "/home/runner/work/ggml-org-central/ggml-org-central/build/src",
+  "command": "/usr/bin/c++ -DGGML_BUILD -DGGML_SCHED_MAX_COPIES=4 -DGGML_SHARED -D_GNU_SOURCE -D_XOPEN_SOURCE=600 -Dggml_base_EXPORTS -I/home/runner/work/ggml-org-central/ggml-org-central/ggml/src/. -I/home/runner/work/ggml-org-central/ggml-org-central/ggml/src/../include -O3 -DNDEBUG -std=gnu++17 -fPIC -Wmissing-declarations -Wmissing-noreturn -Wall -Wextra -Wpedantic -Wcast-qual -Wno-unused-function -Wno-array-bounds -Wextra-semi -o CMakeFiles/ggml-base.dir/ggml-backend.cpp.o -c /home/runner/work/ggml-org-central/ggml-org-central/ggml/src/ggml-backend.cpp",
+  "file": "/home/runner/work/ggml-org-central/ggml-org-central/ggml/src/ggml-backend.cpp",
+  "output": "src/CMakeFiles/ggml-base.dir/ggml-backend.cpp.o"
+},
+{
+  "directory": "/home/runner/work/ggml-org-central/ggml-org-central/build/src",
+  "command": "/usr/bin/c++ -DGGML_BUILD -DGGML_SCHED_MAX_COPIES=4 -DGGML_SHARED -D_GNU_SOURCE -D_XOPEN_SOURCE=600 -Dggml_base_EXPORTS -I/home/runner/work/ggml-org-central/ggml-org-central/ggml/src/. -I/home/runner/work/ggml-org-central/ggml-org-central/ggml/src/../include -O3 -DNDEBUG -std=gnu++17 -fPIC -Wmissing-declarations -Wmissing-noreturn -Wall -Wextra -Wpedantic -Wcast-qual -Wno-unused-function -Wno-array-bounds -Wextra-semi -o CMakeFiles/ggml-base.dir/ggml-opt.cpp.o -c /home/runner/work/ggml-org-central/ggml-org-central/ggml/src/ggml-opt.cpp",
+  "file": "/home/runner/work/ggml-org-central/ggml-org-central/ggml/src/ggml-opt.cpp",
+  "output": "src/CMakeFiles/ggml-base.dir/ggml-opt.cpp.o"
+},
+{
+  "directory": "/home/runner/work/ggml-org-central/ggml-org-central/build/src",
+  "command": "/usr/bin/c++ -DGGML_BUILD -DGGML_SCHED_MAX_COPIES=4 -DGGML_SHARED -D_GNU_SOURCE -D_XOPEN_SOURCE=600 -Dggml_base_EXPORTS -I/home/runner/work/ggml-org-central/ggml-org-central/ggml/src/. -I/home/runner/work/ggml-org-central/ggml-org-central/ggml/src/../include -O3 -DNDEBUG -std=gnu++17 -fPIC -Wmissing-declarations -Wmissing-noreturn -Wall -Wextra -Wpedantic -Wcast-qual -Wno-unused-function -Wno-array-bounds -Wextra-semi -o CMakeFiles/ggml-base.dir/ggml-threading.cpp.o -c /home/runner/work/ggml-org-central/ggml-org-central/ggml/src/ggml-threading.cpp",
+  "file": "/home/runner/work/ggml-org-central/ggml-org-central/ggml/src/ggml-threading.cpp",
+  "output": "src/CMakeFiles/ggml-base.dir/ggml-threading.cpp.o"
+},
+{
+  "directory": "/home/runner/work/ggml-org-central/ggml-org-central/build/src",
+  "command": "/usr/bin/cc -DGGML_BUILD -DGGML_SCHED_MAX_COPIES=4 -DGGML_SHARED -D_GNU_SOURCE -D_XOPEN_SOURCE=600 -Dggml_base_EXPORTS -I/home/runner/work/ggml-org-central/ggml-org-central/ggml/src/. -I/home/runner/work/ggml-org-central/ggml-org-central/ggml/src/../include -O3 -DNDEBUG -std=gnu11 -fPIC -Wshadow -Wstrict-prototypes -Wpointer-arith -Wmissing-prototypes -Werror=implicit-int -Werror=implicit-function-declaration -Wall -Wextra -Wpedantic -Wcast-qual -Wno-unused-function -Wdouble-promotion -o CMakeFiles/ggml-base.dir/ggml-quants.c.o -c /home/runner/work/ggml-org-central/ggml-org-central/ggml/src/ggml-quants.c",
+  "file": "/home/runner/work/ggml-org-central/ggml-org-central/ggml/src/ggml-quants.c",
+  "output": "src/CMakeFiles/ggml-base.dir/ggml-quants.c.o"
+},
+{
+  "directory": "/home/runner/work/ggml-org-central/ggml-org-central/build/src",
+  "command": "/usr/bin/c++ -DGGML_BUILD -DGGML_SCHED_MAX_COPIES=4 -DGGML_SHARED -D_GNU_SOURCE -D_XOPEN_SOURCE=600 -Dggml_base_EXPORTS -I/home/runner/work/ggml-org-central/ggml-org-central/ggml/src/. -I/home/runner/work/ggml-org-central/ggml-org-central/ggml/src/../include -O3 -DNDEBUG -std=gnu++17 -fPIC -Wmissing-declarations -Wmissing-noreturn -Wall -Wextra -Wpedantic -Wcast-qual -Wno-unused-function -Wno-array-bounds -Wextra-semi -o CMakeFiles/ggml-base.dir/gguf.cpp.o -c /home/runner/work/ggml-org-central/ggml-org-central/ggml/src/gguf.cpp",
+  "file": "/home/runner/work/ggml-org-central/ggml-org-central/ggml/src/gguf.cpp",
+  "output": "src/CMakeFiles/ggml-base.dir/gguf.cpp.o"
+},
+{
+  "directory": "/home/runner/work/ggml-org-central/ggml-org-central/build/src",
+  "command": "/usr/bin/cc -DGGML_BACKEND_BUILD -DGGML_BACKEND_SHARED -DGGML_SCHED_MAX_COPIES=4 -DGGML_SHARED -DGGML_USE_CPU_REPACK -DGGML_USE_OPENMP -D_GNU_SOURCE -D_XOPEN_SOURCE=600 -Dggml_cpu_EXPORTS -I/home/runner/work/ggml-org-central/ggml-org-central/ggml/src/.. -I/home/runner/work/ggml-org-central/ggml-org-central/ggml/src/. -I/home/runner/work/ggml-org-central/ggml-org-central/ggml/src/ggml-cpu -I/home/runner/work/ggml-org-central/ggml-org-central/ggml/src/../include -O3 -DNDEBUG -std=gnu11 -fPIC -Wshadow -Wstrict-prototypes -Wpointer-arith -Wmissing-prototypes -Werror=implicit-int -Werror=implicit-function-declaration -Wall -Wextra -Wpedantic -Wcast-qual -Wno-unused-function -Wdouble-promotion -march=native -fopenmp -o CMakeFiles/ggml-cpu.dir/ggml-cpu/ggml-cpu.c.o -c /home/runner/work/ggml-org-central/ggml-org-central/ggml/src/ggml-cpu/ggml-cpu.c",
+  "file": "/home/runner/work/ggml-org-central/ggml-org-central/ggml/src/ggml-cpu/ggml-cpu.c",
+  "output": "src/CMakeFiles/ggml-cpu.dir/ggml-cpu/ggml-cpu.c.o"
+},
+{
+  "directory": "/home/runner/work/ggml-org-central/ggml-org-central/build/src",
+  "command": "/usr/bin/c++ -DGGML_BACKEND_BUILD -DGGML_BACKEND_SHARED -DGGML_SCHED_MAX_COPIES=4 -DGGML_SHARED -DGGML_USE_CPU_REPACK -DGGML_USE_OPENMP -D_GNU_SOURCE -D_XOPEN_SOURCE=600 -Dggml_cpu_EXPORTS -I/home/runner/work/ggml-org-central/ggml-org-central/ggml/src/.. -I/home/runner/work/ggml-org-central/ggml-org-central/ggml/src/. -I/home/runner/work/ggml-org-central/ggml-org-central/ggml/src/ggml-cpu -I/home/runner/work/ggml-org-central/ggml-org-central/ggml/src/../include -O3 -DNDEBUG -std=gnu++17 -fPIC -Wmissing-declarations -Wmissing-noreturn -Wall -Wextra -Wpedantic -Wcast-qual -Wno-unused-function -Wno-array-bounds -Wextra-semi -march=native -fopenmp -o CMakeFiles/ggml-cpu.dir/ggml-cpu/ggml-cpu.cpp.o -c /home/runner/work/ggml-org-central/ggml-org-central/ggml/src/ggml-cpu/ggml-cpu.cpp",
+  "file": "/home/runner/work/ggml-org-central/ggml-org-central/ggml/src/ggml-cpu/ggml-cpu.cpp",
+  "output": "src/CMakeFiles/ggml-cpu.dir/ggml-cpu/ggml-cpu.cpp.o"
+},
+{
+  "directory": "/home/runner/work/ggml-org-central/ggml-org-central/build/src",
+  "command": "/usr/bin/c++ -DGGML_BACKEND_BUILD -DGGML_BACKEND_SHARED -DGGML_SCHED_MAX_COPIES=4 -DGGML_SHARED -DGGML_USE_CPU_REPACK -DGGML_USE_OPENMP -D_GNU_SOURCE -D_XOPEN_SOURCE=600 -Dggml_cpu_EXPORTS -I/home/runner/work/ggml-org-central/ggml-org-central/ggml/src/.. -I/home/runner/work/ggml-org-central/ggml-org-central/ggml/src/. -I/home/runner/work/ggml-org-central/ggml-org-central/ggml/src/ggml-cpu -I/home/runner/work/ggml-org-central/ggml-org-central/ggml/src/../include -O3 -DNDEBUG -std=gnu++17 -fPIC -Wmissing-declarations -Wmissing-noreturn -Wall -Wextra -Wpedantic -Wcast-qual -Wno-unused-function -Wno-array-bounds -Wextra-semi -march=native -fopenmp -o CMakeFiles/ggml-cpu.dir/ggml-cpu/repack.cpp.o -c /home/runner/work/ggml-org-central/ggml-org-central/ggml/src/ggml-cpu/repack.cpp",
+  "file": "/home/runner/work/ggml-org-central/ggml-org-central/ggml/src/ggml-cpu/repack.cpp",
+  "output": "src/CMakeFiles/ggml-cpu.dir/ggml-cpu/repack.cpp.o"
+},
+{
+  "directory": "/home/runner/work/ggml-org-central/ggml-org-central/build/src",
+  "command": "/usr/bin/c++ -DGGML_BACKEND_BUILD -DGGML_BACKEND_SHARED -DGGML_SCHED_MAX_COPIES=4 -DGGML_SHARED -DGGML_USE_CPU_REPACK -DGGML_USE_OPENMP -D_GNU_SOURCE -D_XOPEN_SOURCE=600 -Dggml_cpu_EXPORTS -I/home/runner/work/ggml-org-central/ggml-org-central/ggml/src/.. -I/home/runner/work/ggml-org-central/ggml-org-central/ggml/src/. -I/home/runner/work/ggml-org-central/ggml-org-central/ggml/src/ggml-cpu -I/home/runner/work/ggml-org-central/ggml-org-central/ggml/src/../include -O3 -DNDEBUG -std=gnu++17 -fPIC -Wmissing-declarations -Wmissing-noreturn -Wall -Wextra -Wpedantic -Wcast-qual -Wno-unused-function -Wno-array-bounds -Wextra-semi -march=native -fopenmp -o CMakeFiles/ggml-cpu.dir/ggml-cpu/hbm.cpp.o -c /home/runner/work/ggml-org-central/ggml-org-central/ggml/src/ggml-cpu/hbm.cpp",
+  "file": "/home/runner/work/ggml-org-central/ggml-org-central/ggml/src/ggml-cpu/hbm.cpp",
+  "output": "src/CMakeFiles/ggml-cpu.dir/ggml-cpu/hbm.cpp.o"
+},
+{
+  "directory": "/home/runner/work/ggml-org-central/ggml-org-central/build/src",
+  "command": "/usr/bin/cc -DGGML_BACKEND_BUILD -DGGML_BACKEND_SHARED -DGGML_SCHED_MAX_COPIES=4 -DGGML_SHARED -DGGML_USE_CPU_REPACK -DGGML_USE_OPENMP -D_GNU_SOURCE -D_XOPEN_SOURCE=600 -Dggml_cpu_EXPORTS -I/home/runner/work/ggml-org-central/ggml-org-central/ggml/src/.. -I/home/runner/work/ggml-org-central/ggml-org-central/ggml/src/. -I/home/runner/work/ggml-org-central/ggml-org-central/ggml/src/ggml-cpu -I/home/runner/work/ggml-org-central/ggml-org-central/ggml/src/../include -O3 -DNDEBUG -std=gnu11 -fPIC -Wshadow -Wstrict-prototypes -Wpointer-arith -Wmissing-prototypes -Werror=implicit-int -Werror=implicit-function-declaration -Wall -Wextra -Wpedantic -Wcast-qual -Wno-unused-function -Wdouble-promotion -march=native -fopenmp -o CMakeFiles/ggml-cpu.dir/ggml-cpu/quants.c.o -c /home/runner/work/ggml-org-central/ggml-org-central/ggml/src/ggml-cpu/quants.c",
+  "file": "/home/runner/work/ggml-org-central/ggml-org-central/ggml/src/ggml-cpu/quants.c",
+  "output": "src/CMakeFiles/ggml-cpu.dir/ggml-cpu/quants.c.o"
+},
+{
+  "directory": "/home/runner/work/ggml-org-central/ggml-org-central/build/src",
+  "command": "/usr/bin/c++ -DGGML_BACKEND_BUILD -DGGML_BACKEND_SHARED -DGGML_SCHED_MAX_COPIES=4 -DGGML_SHARED -DGGML_USE_CPU_REPACK -DGGML_USE_OPENMP -D_GNU_SOURCE -D_XOPEN_SOURCE=600 -Dggml_cpu_EXPORTS -I/home/runner/work/ggml-org-central/ggml-org-central/ggml/src/.. -I/home/runner/work/ggml-org-central/ggml-org-central/ggml/src/. -I/home/runner/work/ggml-org-central/ggml-org-central/ggml/src/ggml-cpu -I/home/runner/work/ggml-org-central/ggml-org-central/ggml/src/../include -O3 -DNDEBUG -std=gnu++17 -fPIC -Wmissing-declarations -Wmissing-noreturn -Wall -Wextra -Wpedantic -Wcast-qual -Wno-unused-function -Wno-array-bounds -Wextra-semi -march=native -fopenmp -o CMakeFiles/ggml-cpu.dir/ggml-cpu/traits.cpp.o -c /home/runner/work/ggml-org-central/ggml-org-central/ggml/src/ggml-cpu/traits.cpp",
+  "file": "/home/runner/work/ggml-org-central/ggml-org-central/ggml/src/ggml-cpu/traits.cpp",
+  "output": "src/CMakeFiles/ggml-cpu.dir/ggml-cpu/traits.cpp.o"
+},
+{
+  "directory": "/home/runner/work/ggml-org-central/ggml-org-central/build/src",
+  "command": "/usr/bin/c++ -DGGML_BACKEND_BUILD -DGGML_BACKEND_SHARED -DGGML_SCHED_MAX_COPIES=4 -DGGML_SHARED -DGGML_USE_CPU_REPACK -DGGML_USE_OPENMP -D_GNU_SOURCE -D_XOPEN_SOURCE=600 -Dggml_cpu_EXPORTS -I/home/runner/work/ggml-org-central/ggml-org-central/ggml/src/.. -I/home/runner/work/ggml-org-central/ggml-org-central/ggml/src/. -I/home/runner/work/ggml-org-central/ggml-org-central/ggml/src/ggml-cpu -I/home/runner/work/ggml-org-central/ggml-org-central/ggml/src/../include -O3 -DNDEBUG -std=gnu++17 -fPIC -Wmissing-declarations -Wmissing-noreturn -Wall -Wextra -Wpedantic -Wcast-qual -Wno-unused-function -Wno-array-bounds -Wextra-semi -march=native -fopenmp -o CMakeFiles/ggml-cpu.dir/ggml-cpu/amx/amx.cpp.o -c /home/runner/work/ggml-org-central/ggml-org-central/ggml/src/ggml-cpu/amx/amx.cpp",
+  "file": "/home/runner/work/ggml-org-central/ggml-org-central/ggml/src/ggml-cpu/amx/amx.cpp",
+  "output": "src/CMakeFiles/ggml-cpu.dir/ggml-cpu/amx/amx.cpp.o"
+},
+{
+  "directory": "/home/runner/work/ggml-org-central/ggml-org-central/build/src",
+  "command": "/usr/bin/c++ -DGGML_BACKEND_BUILD -DGGML_BACKEND_SHARED -DGGML_SCHED_MAX_COPIES=4 -DGGML_SHARED -DGGML_USE_CPU_REPACK -DGGML_USE_OPENMP -D_GNU_SOURCE -D_XOPEN_SOURCE=600 -Dggml_cpu_EXPORTS -I/home/runner/work/ggml-org-central/ggml-org-central/ggml/src/.. -I/home/runner/work/ggml-org-central/ggml-org-central/ggml/src/. -I/home/runner/work/ggml-org-central/ggml-org-central/ggml/src/ggml-cpu -I/home/runner/work/ggml-org-central/ggml-org-central/ggml/src/../include -O3 -DNDEBUG -std=gnu++17 -fPIC -Wmissing-declarations -Wmissing-noreturn -Wall -Wextra -Wpedantic -Wcast-qual -Wno-unused-function -Wno-array-bounds -Wextra-semi -march=native -fopenmp -o CMakeFiles/ggml-cpu.dir/ggml-cpu/amx/mmq.cpp.o -c /home/runner/work/ggml-org-central/ggml-org-central/ggml/src/ggml-cpu/amx/mmq.cpp",
+  "file": "/home/runner/work/ggml-org-central/ggml-org-central/ggml/src/ggml-cpu/amx/mmq.cpp",
+  "output": "src/CMakeFiles/ggml-cpu.dir/ggml-cpu/amx/mmq.cpp.o"
+},
+{
+  "directory": "/home/runner/work/ggml-org-central/ggml-org-central/build/src",
+  "command": "/usr/bin/c++ -DGGML_BACKEND_BUILD -DGGML_BACKEND_SHARED -DGGML_SCHED_MAX_COPIES=4 -DGGML_SHARED -DGGML_USE_CPU_REPACK -DGGML_USE_OPENMP -D_GNU_SOURCE -D_XOPEN_SOURCE=600 -Dggml_cpu_EXPORTS -I/home/runner/work/ggml-org-central/ggml-org-central/ggml/src/.. -I/home/runner/work/ggml-org-central/ggml-org-central/ggml/src/. -I/home/runner/work/ggml-org-central/ggml-org-central/ggml/src/ggml-cpu -I/home/runner/work/ggml-org-central/ggml-org-central/ggml/src/../include -O3 -DNDEBUG -std=gnu++17 -fPIC -Wmissing-declarations -Wmissing-noreturn -Wall -Wextra -Wpedantic -Wcast-qual -Wno-unused-function -Wno-array-bounds -Wextra-semi -march=native -fopenmp -o CMakeFiles/ggml-cpu.dir/ggml-cpu/binary-ops.cpp.o -c /home/runner/work/ggml-org-central/ggml-org-central/ggml/src/ggml-cpu/binary-ops.cpp",
+  "file": "/home/runner/work/ggml-org-central/ggml-org-central/ggml/src/ggml-cpu/binary-ops.cpp",
+  "output": "src/CMakeFiles/ggml-cpu.dir/ggml-cpu/binary-ops.cpp.o"
+},
+{
+  "directory": "/home/runner/work/ggml-org-central/ggml-org-central/build/src",
+  "command": "/usr/bin/c++ -DGGML_BACKEND_BUILD -DGGML_BACKEND_SHARED -DGGML_SCHED_MAX_COPIES=4 -DGGML_SHARED -DGGML_USE_CPU_REPACK -DGGML_USE_OPENMP -D_GNU_SOURCE -D_XOPEN_SOURCE=600 -Dggml_cpu_EXPORTS -I/home/runner/work/ggml-org-central/ggml-org-central/ggml/src/.. -I/home/runner/work/ggml-org-central/ggml-org-central/ggml/src/. -I/home/runner/work/ggml-org-central/ggml-org-central/ggml/src/ggml-cpu -I/home/runner/work/ggml-org-central/ggml-org-central/ggml/src/../include -O3 -DNDEBUG -std=gnu++17 -fPIC -Wmissing-declarations -Wmissing-noreturn -Wall -Wextra -Wpedantic -Wcast-qual -Wno-unused-function -Wno-array-bounds -Wextra-semi -march=native -fopenmp -o CMakeFiles/ggml-cpu.dir/ggml-cpu/unary-ops.cpp.o -c /home/runner/work/ggml-org-central/ggml-org-central/ggml/src/ggml-cpu/unary-ops.cpp",
+  "file": "/home/runner/work/ggml-org-central/ggml-org-central/ggml/src/ggml-cpu/unary-ops.cpp",
+  "output": "src/CMakeFiles/ggml-cpu.dir/ggml-cpu/unary-ops.cpp.o"
+},
+{
+  "directory": "/home/runner/work/ggml-org-central/ggml-org-central/build/src",
+  "command": "/usr/bin/c++ -DGGML_BACKEND_BUILD -DGGML_BACKEND_SHARED -DGGML_SCHED_MAX_COPIES=4 -DGGML_SHARED -DGGML_USE_CPU_REPACK -DGGML_USE_OPENMP -D_GNU_SOURCE -D_XOPEN_SOURCE=600 -Dggml_cpu_EXPORTS -I/home/runner/work/ggml-org-central/ggml-org-central/ggml/src/.. -I/home/runner/work/ggml-org-central/ggml-org-central/ggml/src/. -I/home/runner/work/ggml-org-central/ggml-org-central/ggml/src/ggml-cpu -I/home/runner/work/ggml-org-central/ggml-org-central/ggml/src/../include -O3 -DNDEBUG -std=gnu++17 -fPIC -Wmissing-declarations -Wmissing-noreturn -Wall -Wextra -Wpedantic -Wcast-qual -Wno-unused-function -Wno-array-bounds -Wextra-semi -march=native -fopenmp -o CMakeFiles/ggml-cpu.dir/ggml-cpu/vec.cpp.o -c /home/runner/work/ggml-org-central/ggml-org-central/ggml/src/ggml-cpu/vec.cpp",
+  "file": "/home/runner/work/ggml-org-central/ggml-org-central/ggml/src/ggml-cpu/vec.cpp",
+  "output": "src/CMakeFiles/ggml-cpu.dir/ggml-cpu/vec.cpp.o"
+},
+{
+  "directory": "/home/runner/work/ggml-org-central/ggml-org-central/build/src",
+  "command": "/usr/bin/c++ -DGGML_BACKEND_BUILD -DGGML_BACKEND_SHARED -DGGML_SCHED_MAX_COPIES=4 -DGGML_SHARED -DGGML_USE_CPU_REPACK -DGGML_USE_OPENMP -D_GNU_SOURCE -D_XOPEN_SOURCE=600 -Dggml_cpu_EXPORTS -I/home/runner/work/ggml-org-central/ggml-org-central/ggml/src/.. -I/home/runner/work/ggml-org-central/ggml-org-central/ggml/src/. -I/home/runner/work/ggml-org-central/ggml-org-central/ggml/src/ggml-cpu -I/home/runner/work/ggml-org-central/ggml-org-central/ggml/src/../include -O3 -DNDEBUG -std=gnu++17 -fPIC -Wmissing-declarations -Wmissing-noreturn -Wall -Wextra -Wpedantic -Wcast-qual -Wno-unused-function -Wno-array-bounds -Wextra-semi -march=native -fopenmp -o CMakeFiles/ggml-cpu.dir/ggml-cpu/ops.cpp.o -c /home/runner/work/ggml-org-central/ggml-org-central/ggml/src/ggml-cpu/ops.cpp",
+  "file": "/home/runner/work/ggml-org-central/ggml-org-central/ggml/src/ggml-cpu/ops.cpp",
+  "output": "src/CMakeFiles/ggml-cpu.dir/ggml-cpu/ops.cpp.o"
+},
+{
+  "directory": "/home/runner/work/ggml-org-central/ggml-org-central/build/src",
+  "command": "/usr/bin/cc -DGGML_BACKEND_BUILD -DGGML_BACKEND_SHARED -DGGML_SCHED_MAX_COPIES=4 -DGGML_SHARED -DGGML_USE_CPU_REPACK -DGGML_USE_OPENMP -D_GNU_SOURCE -D_XOPEN_SOURCE=600 -Dggml_cpu_EXPORTS -I/home/runner/work/ggml-org-central/ggml-org-central/ggml/src/.. -I/home/runner/work/ggml-org-central/ggml-org-central/ggml/src/. -I/home/runner/work/ggml-org-central/ggml-org-central/ggml/src/ggml-cpu -I/home/runner/work/ggml-org-central/ggml-org-central/ggml/src/../include -O3 -DNDEBUG -std=gnu11 -fPIC -Wshadow -Wstrict-prototypes -Wpointer-arith -Wmissing-prototypes -Werror=implicit-int -Werror=implicit-function-declaration -Wall -Wextra -Wpedantic -Wcast-qual -Wno-unused-function -Wdouble-promotion -march=native -fopenmp -o CMakeFiles/ggml-cpu.dir/ggml-cpu/arch/x86/quants.c.o -c /home/runner/work/ggml-org-central/ggml-org-central/ggml/src/ggml-cpu/arch/x86/quants.c",
+  "file": "/home/runner/work/ggml-org-central/ggml-org-central/ggml/src/ggml-cpu/arch/x86/quants.c",
+  "output": "src/CMakeFiles/ggml-cpu.dir/ggml-cpu/arch/x86/quants.c.o"
+},
+{
+  "directory": "/home/runner/work/ggml-org-central/ggml-org-central/build/src",
+  "command": "/usr/bin/c++ -DGGML_BACKEND_BUILD -DGGML_BACKEND_SHARED -DGGML_SCHED_MAX_COPIES=4 -DGGML_SHARED -DGGML_USE_CPU_REPACK -DGGML_USE_OPENMP -D_GNU_SOURCE -D_XOPEN_SOURCE=600 -Dggml_cpu_EXPORTS -I/home/runner/work/ggml-org-central/ggml-org-central/ggml/src/.. -I/home/runner/work/ggml-org-central/ggml-org-central/ggml/src/. -I/home/runner/work/ggml-org-central/ggml-org-central/ggml/src/ggml-cpu -I/home/runner/work/ggml-org-central/ggml-org-central/ggml/src/../include -O3 -DNDEBUG -std=gnu++17 -fPIC -Wmissing-declarations -Wmissing-noreturn -Wall -Wextra -Wpedantic -Wcast-qual -Wno-unused-function -Wno-array-bounds -Wextra-semi -march=native -fopenmp -o CMakeFiles/ggml-cpu.dir/ggml-cpu/arch/x86/repack.cpp.o -c /home/runner/work/ggml-org-central/ggml-org-central/ggml/src/ggml-cpu/arch/x86/repack.cpp",
+  "file": "/home/runner/work/ggml-org-central/ggml-org-central/ggml/src/ggml-cpu/arch/x86/repack.cpp",
+  "output": "src/CMakeFiles/ggml-cpu.dir/ggml-cpu/arch/x86/repack.cpp.o"
+},
+{
+  "directory": "/home/runner/work/ggml-org-central/ggml-org-central/build/src",
+  "command": "/usr/bin/c++ -DGGML_BACKEND_SHARED -DGGML_BUILD -DGGML_SCHED_MAX_COPIES=4 -DGGML_SHARED -DGGML_USE_CPU -D_GNU_SOURCE -D_XOPEN_SOURCE=600 -Dggml_EXPORTS -I/home/runner/work/ggml-org-central/ggml-org-central/ggml/src/../include -O3 -DNDEBUG -std=gnu++17 -fPIC -Wmissing-declarations -Wmissing-noreturn -Wall -Wextra -Wpedantic -Wcast-qual -Wno-unused-function -Wno-array-bounds -Wextra-semi -o CMakeFiles/ggml.dir/ggml-backend-reg.cpp.o -c /home/runner/work/ggml-org-central/ggml-org-central/ggml/src/ggml-backend-reg.cpp",
+  "file": "/home/runner/work/ggml-org-central/ggml-org-central/ggml/src/ggml-backend-reg.cpp",
+  "output": "src/CMakeFiles/ggml.dir/ggml-backend-reg.cpp.o"
+},
+{
+  "directory": "/home/runner/work/ggml-org-central/ggml-org-central/build/tests",
+  "command": "/usr/bin/c++ -DGGML_BACKEND_SHARED -DGGML_SHARED -DGGML_USE_CPU -I/home/runner/work/ggml-org-central/ggml-org-central/ggml/src/../include -O3 -DNDEBUG -std=gnu++17   -UNDEBUG -o CMakeFiles/test-backend-ops.dir/test-backend-ops.cpp.o -c /home/runner/work/ggml-org-central/ggml-org-central/ggml/tests/test-backend-ops.cpp",
+  "file": "/home/runner/work/ggml-org-central/ggml-org-central/ggml/tests/test-backend-ops.cpp",
+  "output": "tests/CMakeFiles/test-backend-ops.dir/test-backend-ops.cpp.o"
+},
+{
+  "directory": "/home/runner/work/ggml-org-central/ggml-org-central/build/tests",
+  "command": "/usr/bin/c++ -DGGML_BACKEND_SHARED -DGGML_SHARED -DGGML_USE_CPU -I/home/runner/work/ggml-org-central/ggml-org-central/ggml/src/../include -O3 -DNDEBUG -std=gnu++17   -UNDEBUG -o CMakeFiles/test-opt.dir/test-opt.cpp.o -c /home/runner/work/ggml-org-central/ggml-org-central/ggml/tests/test-opt.cpp",
+  "file": "/home/runner/work/ggml-org-central/ggml-org-central/ggml/tests/test-opt.cpp",
+  "output": "tests/CMakeFiles/test-opt.dir/test-opt.cpp.o"
+},
+{
+  "directory": "/home/runner/work/ggml-org-central/ggml-org-central/build/tests",
+  "command": "/usr/bin/c++ -DGGML_BACKEND_SHARED -DGGML_SHARED -DGGML_USE_CPU -I/home/runner/work/ggml-org-central/ggml-org-central/ggml/src/../include -O3 -DNDEBUG -std=gnu++17   -UNDEBUG -o CMakeFiles/test-quantize-fns.dir/test-quantize-fns.cpp.o -c /home/runner/work/ggml-org-central/ggml-org-central/ggml/tests/test-quantize-fns.cpp",
+  "file": "/home/runner/work/ggml-org-central/ggml-org-central/ggml/tests/test-quantize-fns.cpp",
+  "output": "tests/CMakeFiles/test-quantize-fns.dir/test-quantize-fns.cpp.o"
+},
+{
+  "directory": "/home/runner/work/ggml-org-central/ggml-org-central/build/tests",
+  "command": "/usr/bin/c++ -DGGML_BACKEND_SHARED -DGGML_SHARED -DGGML_USE_CPU -I/home/runner/work/ggml-org-central/ggml-org-central/ggml/src/../include -O3 -DNDEBUG -std=gnu++17   -UNDEBUG -o CMakeFiles/test-quantize-perf.dir/test-quantize-perf.cpp.o -c /home/runner/work/ggml-org-central/ggml-org-central/ggml/tests/test-quantize-perf.cpp",
+  "file": "/home/runner/work/ggml-org-central/ggml-org-central/ggml/tests/test-quantize-perf.cpp",
+  "output": "tests/CMakeFiles/test-quantize-perf.dir/test-quantize-perf.cpp.o"
+},
+{
+  "directory": "/home/runner/work/ggml-org-central/ggml-org-central/build/tests",
+  "command": "/usr/bin/cc -DGGML_BACKEND_SHARED -DGGML_SHARED -DGGML_USE_CPU -I/home/runner/work/ggml-org-central/ggml-org-central/ggml/src/../include  -mavx -mavx2 -mfma -mf16c -msse3 -O3 -DNDEBUG -std=gnu11   -UNDEBUG -o CMakeFiles/test-pool.dir/test-pool.c.o -c /home/runner/work/ggml-org-central/ggml-org-central/ggml/tests/test-pool.c",
+  "file": "/home/runner/work/ggml-org-central/ggml-org-central/ggml/tests/test-pool.c",
+  "output": "tests/CMakeFiles/test-pool.dir/test-pool.c.o"
+},
+{
+  "directory": "/home/runner/work/ggml-org-central/ggml-org-central/build/tests",
+  "command": "/usr/bin/c++ -DGGML_BACKEND_SHARED -DGGML_SHARED -DGGML_USE_CPU -I/home/runner/work/ggml-org-central/ggml-org-central/ggml/src/../include -O3 -DNDEBUG -std=gnu++17   -UNDEBUG -o CMakeFiles/test-arange.dir/test-arange.cpp.o -c /home/runner/work/ggml-org-central/ggml-org-central/ggml/tests/test-arange.cpp",
+  "file": "/home/runner/work/ggml-org-central/ggml-org-central/ggml/tests/test-arange.cpp",
+  "output": "tests/CMakeFiles/test-arange.dir/test-arange.cpp.o"
+},
+{
+  "directory": "/home/runner/work/ggml-org-central/ggml-org-central/build/tests",
+  "command": "/usr/bin/c++ -DGGML_BACKEND_SHARED -DGGML_SHARED -DGGML_USE_CPU -I/home/runner/work/ggml-org-central/ggml-org-central/ggml/src/../include -O3 -DNDEBUG -std=gnu++17   -UNDEBUG -o CMakeFiles/test-timestep_embedding.dir/test-timestep_embedding.cpp.o -c /home/runner/work/ggml-org-central/ggml-org-central/ggml/tests/test-timestep_embedding.cpp",
+  "file": "/home/runner/work/ggml-org-central/ggml-org-central/ggml/tests/test-timestep_embedding.cpp",
+  "output": "tests/CMakeFiles/test-timestep_embedding.dir/test-timestep_embedding.cpp.o"
+},
+{
+  "directory": "/home/runner/work/ggml-org-central/ggml-org-central/build/tests",
+  "command": "/usr/bin/c++ -DGGML_BACKEND_SHARED -DGGML_SHARED -DGGML_USE_CPU -I/home/runner/work/ggml-org-central/ggml-org-central/ggml/src/../include -O3 -DNDEBUG -std=gnu++17   -UNDEBUG -o CMakeFiles/test-pad-reflect-1d.dir/test-pad-reflect-1d.cpp.o -c /home/runner/work/ggml-org-central/ggml-org-central/ggml/tests/test-pad-reflect-1d.cpp",
+  "file": "/home/runner/work/ggml-org-central/ggml-org-central/ggml/tests/test-pad-reflect-1d.cpp",
+  "output": "tests/CMakeFiles/test-pad-reflect-1d.dir/test-pad-reflect-1d.cpp.o"
+},
+{
+  "directory": "/home/runner/work/ggml-org-central/ggml-org-central/build/tests",
+  "command": "/usr/bin/c++ -DGGML_BACKEND_SHARED -DGGML_SHARED -DGGML_USE_CPU -I/home/runner/work/ggml-org-central/ggml-org-central/ggml/src/../include -O3 -DNDEBUG -std=gnu++17   -UNDEBUG -o CMakeFiles/test-roll.dir/test-roll.cpp.o -c /home/runner/work/ggml-org-central/ggml-org-central/ggml/tests/test-roll.cpp",
+  "file": "/home/runner/work/ggml-org-central/ggml-org-central/ggml/tests/test-roll.cpp",
+  "output": "tests/CMakeFiles/test-roll.dir/test-roll.cpp.o"
+},
+{
+  "directory": "/home/runner/work/ggml-org-central/ggml-org-central/build/tests",
+  "command": "/usr/bin/cc -DGGML_BACKEND_SHARED -DGGML_SHARED -DGGML_USE_CPU -I/home/runner/work/ggml-org-central/ggml-org-central/ggml/src/../include  -mavx -mavx2 -mfma -mf16c -msse3 -O3 -DNDEBUG -std=gnu11   -UNDEBUG -o CMakeFiles/test-conv-transpose.dir/test-conv-transpose.c.o -c /home/runner/work/ggml-org-central/ggml-org-central/ggml/tests/test-conv-transpose.c",
+  "file": "/home/runner/work/ggml-org-central/ggml-org-central/ggml/tests/test-conv-transpose.c",
+  "output": "tests/CMakeFiles/test-conv-transpose.dir/test-conv-transpose.c.o"
+},
+{
+  "directory": "/home/runner/work/ggml-org-central/ggml-org-central/build/tests",
+  "command": "/usr/bin/c++ -DGGML_BACKEND_SHARED -DGGML_SHARED -DGGML_USE_CPU -I/home/runner/work/ggml-org-central/ggml-org-central/ggml/src/../include -O3 -DNDEBUG -std=gnu++17   -UNDEBUG -o CMakeFiles/test-conv-transpose-1d.dir/test-conv-transpose-1d.cpp.o -c /home/runner/work/ggml-org-central/ggml-org-central/ggml/tests/test-conv-transpose-1d.cpp",
+  "file": "/home/runner/work/ggml-org-central/ggml-org-central/ggml/tests/test-conv-transpose-1d.cpp",
+  "output": "tests/CMakeFiles/test-conv-transpose-1d.dir/test-conv-transpose-1d.cpp.o"
+},
+{
+  "directory": "/home/runner/work/ggml-org-central/ggml-org-central/build/tests",
+  "command": "/usr/bin/cc -DGGML_BACKEND_SHARED -DGGML_SHARED -DGGML_USE_CPU -I/home/runner/work/ggml-org-central/ggml-org-central/ggml/src/../include  -mavx -mavx2 -mfma -mf16c -msse3 -O3 -DNDEBUG -std=gnu11   -UNDEBUG -o CMakeFiles/test-dup.dir/test-dup.c.o -c /home/runner/work/ggml-org-central/ggml-org-central/ggml/tests/test-dup.c",
+  "file": "/home/runner/work/ggml-org-central/ggml-org-central/ggml/tests/test-dup.c",
+  "output": "tests/CMakeFiles/test-dup.dir/test-dup.c.o"
+},
+{
+  "directory": "/home/runner/work/ggml-org-central/ggml-org-central/build/tests",
+  "command": "/usr/bin/cc -DGGML_BACKEND_SHARED -DGGML_SHARED -DGGML_USE_CPU -I/home/runner/work/ggml-org-central/ggml-org-central/ggml/src/../include  -mavx -mavx2 -mfma -mf16c -msse3 -O3 -DNDEBUG -std=gnu11   -UNDEBUG -o CMakeFiles/test-rel-pos.dir/test-rel-pos.c.o -c /home/runner/work/ggml-org-central/ggml-org-central/ggml/tests/test-rel-pos.c",
+  "file": "/home/runner/work/ggml-org-central/ggml-org-central/ggml/tests/test-rel-pos.c",
+  "output": "tests/CMakeFiles/test-rel-pos.dir/test-rel-pos.c.o"
+},
+{
+  "directory": "/home/runner/work/ggml-org-central/ggml-org-central/build/tests",
+  "command": "/usr/bin/cc -DGGML_BACKEND_SHARED -DGGML_SHARED -DGGML_USE_CPU -I/home/runner/work/ggml-org-central/ggml-org-central/ggml/src/../include  -mavx -mavx2 -mfma -mf16c -msse3 -O3 -DNDEBUG -std=gnu11   -UNDEBUG -o CMakeFiles/test-customop.dir/test-customop.c.o -c /home/runner/work/ggml-org-central/ggml-org-central/ggml/tests/test-customop.c",
+  "file": "/home/runner/work/ggml-org-central/ggml-org-central/ggml/tests/test-customop.c",
+  "output": "tests/CMakeFiles/test-customop.dir/test-customop.c.o"
+},
+{
+  "directory": "/home/runner/work/ggml-org-central/ggml-org-central/build/tests",
+  "command": "/usr/bin/c++ -DGGML_BACKEND_SHARED -DGGML_SHARED -DGGML_USE_CPU -I/home/runner/work/ggml-org-central/ggml-org-central/ggml/src/../include -O3 -DNDEBUG -std=gnu++17   -UNDEBUG -o CMakeFiles/test-conv1d.dir/test-conv1d.cpp.o -c /home/runner/work/ggml-org-central/ggml-org-central/ggml/tests/test-conv1d.cpp",
+  "file": "/home/runner/work/ggml-org-central/ggml-org-central/ggml/tests/test-conv1d.cpp",
+  "output": "tests/CMakeFiles/test-conv1d.dir/test-conv1d.cpp.o"
+},
+{
+  "directory": "/home/runner/work/ggml-org-central/ggml-org-central/build/tests",
+  "command": "/usr/bin/c++ -DGGML_BACKEND_SHARED -DGGML_SHARED -DGGML_USE_CPU -I/home/runner/work/ggml-org-central/ggml-org-central/ggml/src/../include -O3 -DNDEBUG -std=gnu++17   -UNDEBUG -o CMakeFiles/test-conv2d.dir/test-conv2d.cpp.o -c /home/runner/work/ggml-org-central/ggml-org-central/ggml/tests/test-conv2d.cpp",
+  "file": "/home/runner/work/ggml-org-central/ggml-org-central/ggml/tests/test-conv2d.cpp",
+  "output": "tests/CMakeFiles/test-conv2d.dir/test-conv2d.cpp.o"
+},
+{
+  "directory": "/home/runner/work/ggml-org-central/ggml-org-central/build/tests",
+  "command": "/usr/bin/c++ -DGGML_BACKEND_SHARED -DGGML_SHARED -DGGML_USE_CPU -I/home/runner/work/ggml-org-central/ggml-org-central/ggml/src/../include -O3 -DNDEBUG -std=gnu++17   -UNDEBUG -o CMakeFiles/test-conv2d-dw.dir/test-conv2d-dw.cpp.o -c /home/runner/work/ggml-org-central/ggml-org-central/ggml/tests/test-conv2d-dw.cpp",
+  "file": "/home/runner/work/ggml-org-central/ggml-org-central/ggml/tests/test-conv2d-dw.cpp",
+  "output": "tests/CMakeFiles/test-conv2d-dw.dir/test-conv2d-dw.cpp.o"
+},
+{
+  "directory": "/home/runner/work/ggml-org-central/ggml-org-central/build/tests",
+  "command": "/usr/bin/cc -DGGML_BACKEND_SHARED -DGGML_SHARED -DGGML_USE_CPU -I/home/runner/work/ggml-org-central/ggml-org-central/ggml/src/../include  -mavx -mavx2 -mfma -mf16c -msse3 -O3 -DNDEBUG -std=gnu11   -UNDEBUG -o CMakeFiles/test-cont.dir/test-cont.c.o -c /home/runner/work/ggml-org-central/ggml-org-central/ggml/tests/test-cont.c",
+  "file": "/home/runner/work/ggml-org-central/ggml-org-central/ggml/tests/test-cont.c",
+  "output": "tests/CMakeFiles/test-cont.dir/test-cont.c.o"
+},
+{
+  "directory": "/home/runner/work/ggml-org-central/ggml-org-central/build/examples",
+  "command": "/usr/bin/c++  -I/home/runner/work/ggml-org-central/ggml-org-central/ggml/examples -O3 -DNDEBUG -std=gnu++17 -Wpedantic -Wunused-variable -Wno-unused-function -Wno-multichar -o CMakeFiles/common.dir/common.cpp.o -c /home/runner/work/ggml-org-central/ggml-org-central/ggml/examples/common.cpp",
+  "file": "/home/runner/work/ggml-org-central/ggml-org-central/ggml/examples/common.cpp",
+  "output": "examples/CMakeFiles/common.dir/common.cpp.o"
+},
+{
+  "directory": "/home/runner/work/ggml-org-central/ggml-org-central/build/examples",
+  "command": "/usr/bin/c++ -DGGML_BACKEND_SHARED -DGGML_SHARED -DGGML_USE_CPU -I/home/runner/work/ggml-org-central/ggml-org-central/ggml/examples -I/home/runner/work/ggml-org-central/ggml-org-central/ggml/src/../include -O3 -DNDEBUG -std=gnu++17 -Wpedantic -Wunused-variable -Wno-unused-function -Wno-multichar -o CMakeFiles/common-ggml.dir/common-ggml.cpp.o -c /home/runner/work/ggml-org-central/ggml-org-central/ggml/examples/common-ggml.cpp",
+  "file": "/home/runner/work/ggml-org-central/ggml-org-central/ggml/examples/common-ggml.cpp",
+  "output": "examples/CMakeFiles/common-ggml.dir/common-ggml.cpp.o"
+},
+{
+  "directory": "/home/runner/work/ggml-org-central/ggml-org-central/build/examples/yolo",
+  "command": "/usr/bin/c++ -DGGML_BACKEND_SHARED -DGGML_SHARED -DGGML_USE_CPU -I/home/runner/work/ggml-org-central/ggml-org-central/ggml/src/../include -I/home/runner/work/ggml-org-central/ggml-org-central/ggml/examples -O3 -DNDEBUG -std=gnu++17 -Wpedantic -Wunused-variable -Wno-unused-function -Wno-multichar -o CMakeFiles/yolov3-tiny.dir/yolov3-tiny.cpp.o -c /home/runner/work/ggml-org-central/ggml-org-central/ggml/examples/yolo/yolov3-tiny.cpp",
+  "file": "/home/runner/work/ggml-org-central/ggml-org-central/ggml/examples/yolo/yolov3-tiny.cpp",
+  "output": "examples/yolo/CMakeFiles/yolov3-tiny.dir/yolov3-tiny.cpp.o"
+},
+{
+  "directory": "/home/runner/work/ggml-org-central/ggml-org-central/build/examples/yolo",
+  "command": "/usr/bin/c++ -DGGML_BACKEND_SHARED -DGGML_SHARED -DGGML_USE_CPU -I/home/runner/work/ggml-org-central/ggml-org-central/ggml/src/../include -I/home/runner/work/ggml-org-central/ggml-org-central/ggml/examples -O3 -DNDEBUG -std=gnu++17 -Wpedantic -Wunused-variable -Wno-unused-function -Wno-multichar -o CMakeFiles/yolov3-tiny.dir/yolo-image.cpp.o -c /home/runner/work/ggml-org-central/ggml-org-central/ggml/examples/yolo/yolo-image.cpp",
+  "file": "/home/runner/work/ggml-org-central/ggml-org-central/ggml/examples/yolo/yolo-image.cpp",
+  "output": "examples/yolo/CMakeFiles/yolov3-tiny.dir/yolo-image.cpp.o"
+},
+{
+  "directory": "/home/runner/work/ggml-org-central/ggml-org-central/build/examples/gpt-2",
+  "command": "/usr/bin/c++ -DGGML_BACKEND_SHARED -DGGML_SHARED -DGGML_USE_CPU -I/home/runner/work/ggml-org-central/ggml-org-central/ggml/src/../include -I/home/runner/work/ggml-org-central/ggml-org-central/ggml/examples -O3 -DNDEBUG -std=gnu++17 -Wpedantic -Wunused-variable -Wno-unused-function -Wno-multichar -o CMakeFiles/gpt-2-ctx.dir/main-ctx.cpp.o -c /home/runner/work/ggml-org-central/ggml-org-central/ggml/examples/gpt-2/main-ctx.cpp",
+  "file": "/home/runner/work/ggml-org-central/ggml-org-central/ggml/examples/gpt-2/main-ctx.cpp",
+  "output": "examples/gpt-2/CMakeFiles/gpt-2-ctx.dir/main-ctx.cpp.o"
+},
+{
+  "directory": "/home/runner/work/ggml-org-central/ggml-org-central/build/examples/gpt-2",
+  "command": "/usr/bin/c++ -DGGML_BACKEND_SHARED -DGGML_SHARED -DGGML_USE_CPU -I/home/runner/work/ggml-org-central/ggml-org-central/ggml/src/../include -I/home/runner/work/ggml-org-central/ggml-org-central/ggml/examples -O3 -DNDEBUG -std=gnu++17 -Wpedantic -Wunused-variable -Wno-unused-function -Wno-multichar -o CMakeFiles/gpt-2-alloc.dir/main-alloc.cpp.o -c /home/runner/work/ggml-org-central/ggml-org-central/ggml/examples/gpt-2/main-alloc.cpp",
+  "file": "/home/runner/work/ggml-org-central/ggml-org-central/ggml/examples/gpt-2/main-alloc.cpp",
+  "output": "examples/gpt-2/CMakeFiles/gpt-2-alloc.dir/main-alloc.cpp.o"
+},
+{
+  "directory": "/home/runner/work/ggml-org-central/ggml-org-central/build/examples/gpt-2",
+  "command": "/usr/bin/c++ -DGGML_BACKEND_SHARED -DGGML_SHARED -DGGML_USE_CPU -I/home/runner/work/ggml-org-central/ggml-org-central/ggml/src/../include -I/home/runner/work/ggml-org-central/ggml-org-central/ggml/examples -O3 -DNDEBUG -std=gnu++17 -Wpedantic -Wunused-variable -Wno-unused-function -Wno-multichar -o CMakeFiles/gpt-2-backend.dir/main-backend.cpp.o -c /home/runner/work/ggml-org-central/ggml-org-central/ggml/examples/gpt-2/main-backend.cpp",
+  "file": "/home/runner/work/ggml-org-central/ggml-org-central/ggml/examples/gpt-2/main-backend.cpp",
+  "output": "examples/gpt-2/CMakeFiles/gpt-2-backend.dir/main-backend.cpp.o"
+},
+{
+  "directory": "/home/runner/work/ggml-org-central/ggml-org-central/build/examples/gpt-2",
+  "command": "/usr/bin/c++ -DGGML_BACKEND_SHARED -DGGML_SHARED -DGGML_USE_CPU -I/home/runner/work/ggml-org-central/ggml-org-central/ggml/src/../include -I/home/runner/work/ggml-org-central/ggml-org-central/ggml/examples -O3 -DNDEBUG -std=gnu++17 -Wpedantic -Wunused-variable -Wno-unused-function -Wno-multichar -o CMakeFiles/gpt-2-sched.dir/main-sched.cpp.o -c /home/runner/work/ggml-org-central/ggml-org-central/ggml/examples/gpt-2/main-sched.cpp",
+  "file": "/home/runner/work/ggml-org-central/ggml-org-central/ggml/examples/gpt-2/main-sched.cpp",
+  "output": "examples/gpt-2/CMakeFiles/gpt-2-sched.dir/main-sched.cpp.o"
+},
+{
+  "directory": "/home/runner/work/ggml-org-central/ggml-org-central/build/examples/gpt-2",
+  "command": "/usr/bin/c++ -DGGML_BACKEND_SHARED -DGGML_SHARED -DGGML_USE_CPU -I/home/runner/work/ggml-org-central/ggml-org-central/ggml/src/../include -I/home/runner/work/ggml-org-central/ggml-org-central/ggml/examples -O3 -DNDEBUG -std=gnu++17 -Wpedantic -Wunused-variable -Wno-unused-function -Wno-multichar -o CMakeFiles/gpt-2-quantize.dir/quantize.cpp.o -c /home/runner/work/ggml-org-central/ggml-org-central/ggml/examples/gpt-2/quantize.cpp",
+  "file": "/home/runner/work/ggml-org-central/ggml-org-central/ggml/examples/gpt-2/quantize.cpp",
+  "output": "examples/gpt-2/CMakeFiles/gpt-2-quantize.dir/quantize.cpp.o"
+},
+{
+  "directory": "/home/runner/work/ggml-org-central/ggml-org-central/build/examples/gpt-2",
+  "command": "/usr/bin/c++ -DGGML_BACKEND_SHARED -DGGML_SHARED -DGGML_USE_CPU -I/home/runner/work/ggml-org-central/ggml-org-central/ggml/src/../include -I/home/runner/work/ggml-org-central/ggml-org-central/ggml/examples -O3 -DNDEBUG -std=gnu++17 -Wpedantic -Wunused-variable -Wno-unused-function -Wno-multichar -o CMakeFiles/gpt-2-batched.dir/main-batched.cpp.o -c /home/runner/work/ggml-org-central/ggml-org-central/ggml/examples/gpt-2/main-batched.cpp",
+  "file": "/home/runner/work/ggml-org-central/ggml-org-central/ggml/examples/gpt-2/main-batched.cpp",
+  "output": "examples/gpt-2/CMakeFiles/gpt-2-batched.dir/main-batched.cpp.o"
+},
+{
+  "directory": "/home/runner/work/ggml-org-central/ggml-org-central/build/examples/gpt-j",
+  "command": "/usr/bin/c++ -DGGML_BACKEND_SHARED -DGGML_SHARED -DGGML_USE_CPU -I/home/runner/work/ggml-org-central/ggml-org-central/ggml/src/../include -I/home/runner/work/ggml-org-central/ggml-org-central/ggml/examples -O3 -DNDEBUG -std=gnu++17 -Wpedantic -Wunused-variable -Wno-unused-function -Wno-multichar -o CMakeFiles/gpt-j.dir/main.cpp.o -c /home/runner/work/ggml-org-central/ggml-org-central/ggml/examples/gpt-j/main.cpp",
+  "file": "/home/runner/work/ggml-org-central/ggml-org-central/ggml/examples/gpt-j/main.cpp",
+  "output": "examples/gpt-j/CMakeFiles/gpt-j.dir/main.cpp.o"
+},
+{
+  "directory": "/home/runner/work/ggml-org-central/ggml-org-central/build/examples/gpt-j",
+  "command": "/usr/bin/c++ -DGGML_BACKEND_SHARED -DGGML_SHARED -DGGML_USE_CPU -I/home/runner/work/ggml-org-central/ggml-org-central/ggml/src/../include -I/home/runner/work/ggml-org-central/ggml-org-central/ggml/examples -O3 -DNDEBUG -std=gnu++17 -Wpedantic -Wunused-variable -Wno-unused-function -Wno-multichar -o CMakeFiles/gpt-j-quantize.dir/quantize.cpp.o -c /home/runner/work/ggml-org-central/ggml-org-central/ggml/examples/gpt-j/quantize.cpp",
+  "file": "/home/runner/work/ggml-org-central/ggml-org-central/ggml/examples/gpt-j/quantize.cpp",
+  "output": "examples/gpt-j/CMakeFiles/gpt-j-quantize.dir/quantize.cpp.o"
+},
+{
+  "directory": "/home/runner/work/ggml-org-central/ggml-org-central/build/examples/mnist",
+  "command": "/usr/bin/c++ -DGGML_BACKEND_SHARED -DGGML_SHARED -DGGML_USE_CPU -I/home/runner/work/ggml-org-central/ggml-org-central/ggml/src/../include -I/home/runner/work/ggml-org-central/ggml-org-central/ggml/examples -O3 -DNDEBUG -std=gnu++17 -Wpedantic -Wunused-variable -Wno-unused-function -Wno-multichar -o CMakeFiles/mnist-common.dir/mnist-common.cpp.o -c /home/runner/work/ggml-org-central/ggml-org-central/ggml/examples/mnist/mnist-common.cpp",
+  "file": "/home/runner/work/ggml-org-central/ggml-org-central/ggml/examples/mnist/mnist-common.cpp",
+  "output": "examples/mnist/CMakeFiles/mnist-common.dir/mnist-common.cpp.o"
+},
+{
+  "directory": "/home/runner/work/ggml-org-central/ggml-org-central/build/examples/mnist",
+  "command": "/usr/bin/c++ -DGGML_BACKEND_SHARED -DGGML_SHARED -DGGML_USE_CPU -I/home/runner/work/ggml-org-central/ggml-org-central/ggml/src/../include -I/home/runner/work/ggml-org-central/ggml-org-central/ggml/examples -O3 -DNDEBUG -std=gnu++17 -Wpedantic -Wunused-variable -Wno-unused-function -Wno-multichar -o CMakeFiles/mnist-eval.dir/mnist-eval.cpp.o -c /home/runner/work/ggml-org-central/ggml-org-central/ggml/examples/mnist/mnist-eval.cpp",
+  "file": "/home/runner/work/ggml-org-central/ggml-org-central/ggml/examples/mnist/mnist-eval.cpp",
+  "output": "examples/mnist/CMakeFiles/mnist-eval.dir/mnist-eval.cpp.o"
+},
+{
+  "directory": "/home/runner/work/ggml-org-central/ggml-org-central/build/examples/mnist",
+  "command": "/usr/bin/c++ -DGGML_BACKEND_SHARED -DGGML_SHARED -DGGML_USE_CPU -I/home/runner/work/ggml-org-central/ggml-org-central/ggml/src/../include -I/home/runner/work/ggml-org-central/ggml-org-central/ggml/examples -O3 -DNDEBUG -std=gnu++17 -Wpedantic -Wunused-variable -Wno-unused-function -Wno-multichar -o CMakeFiles/mnist-train.dir/mnist-train.cpp.o -c /home/runner/work/ggml-org-central/ggml-org-central/ggml/examples/mnist/mnist-train.cpp",
+  "file": "/home/runner/work/ggml-org-central/ggml-org-central/ggml/examples/mnist/mnist-train.cpp",
+  "output": "examples/mnist/CMakeFiles/mnist-train.dir/mnist-train.cpp.o"
+},
+{
+  "directory": "/home/runner/work/ggml-org-central/ggml-org-central/build/examples/sam",
+  "command": "/usr/bin/c++ -DGGML_BACKEND_SHARED -DGGML_SHARED -DGGML_USE_CPU -I/home/runner/work/ggml-org-central/ggml-org-central/ggml/src/../include -I/home/runner/work/ggml-org-central/ggml-org-central/ggml/examples -O3 -DNDEBUG -std=gnu++17 -Wpedantic -Wunused-variable -Wno-unused-function -Wno-multichar -o CMakeFiles/sam.dir/sam.cpp.o -c /home/runner/work/ggml-org-central/ggml-org-central/ggml/examples/sam/sam.cpp",
+  "file": "/home/runner/work/ggml-org-central/ggml-org-central/ggml/examples/sam/sam.cpp",
+  "output": "examples/sam/CMakeFiles/sam.dir/sam.cpp.o"
+},
+{
+  "directory": "/home/runner/work/ggml-org-central/ggml-org-central/build/examples/simple",
+  "command": "/usr/bin/c++ -DGGML_BACKEND_SHARED -DGGML_SHARED -DGGML_USE_CPU -I/home/runner/work/ggml-org-central/ggml-org-central/ggml/src/../include -O3 -DNDEBUG -std=gnu++17 -Wpedantic -Wunused-variable -Wno-unused-function -Wno-multichar -o CMakeFiles/simple-ctx.dir/simple-ctx.cpp.o -c /home/runner/work/ggml-org-central/ggml-org-central/ggml/examples/simple/simple-ctx.cpp",
+  "file": "/home/runner/work/ggml-org-central/ggml-org-central/ggml/examples/simple/simple-ctx.cpp",
+  "output": "examples/simple/CMakeFiles/simple-ctx.dir/simple-ctx.cpp.o"
+},
+{
+  "directory": "/home/runner/work/ggml-org-central/ggml-org-central/build/examples/simple",
+  "command": "/usr/bin/c++ -DGGML_BACKEND_SHARED -DGGML_SHARED -DGGML_USE_CPU -I/home/runner/work/ggml-org-central/ggml-org-central/ggml/src/../include -O3 -DNDEBUG -std=gnu++17 -Wpedantic -Wunused-variable -Wno-unused-function -Wno-multichar -o CMakeFiles/simple-backend.dir/simple-backend.cpp.o -c /home/runner/work/ggml-org-central/ggml-org-central/ggml/examples/simple/simple-backend.cpp",
+  "file": "/home/runner/work/ggml-org-central/ggml-org-central/ggml/examples/simple/simple-backend.cpp",
+  "output": "examples/simple/CMakeFiles/simple-backend.dir/simple-backend.cpp.o"
+},
+{
+  "directory": "/home/runner/work/ggml-org-central/ggml-org-central/build/examples/magika",
+  "command": "/usr/bin/c++ -DGGML_BACKEND_SHARED -DGGML_SHARED -DGGML_USE_CPU -I/home/runner/work/ggml-org-central/ggml-org-central/ggml/src/../include -I/home/runner/work/ggml-org-central/ggml-org-central/ggml/examples -O3 -DNDEBUG -std=gnu++17 -Wpedantic -Wunused-variable -Wno-unused-function -Wno-multichar -o CMakeFiles/magika.dir/main.cpp.o -c /home/runner/work/ggml-org-central/ggml-org-central/ggml/examples/magika/main.cpp",
+  "file": "/home/runner/work/ggml-org-central/ggml-org-central/ggml/examples/magika/main.cpp",
+  "output": "examples/magika/CMakeFiles/magika.dir/main.cpp.o"
+}
+]
