@@ -1,1 +1,0 @@
-/usr/bin/c++ -O3 -DNDEBUG -Wl,--dependency-file=CMakeFiles/test-roll.dir/link.d "CMakeFiles/test-roll.dir/test-roll.cpp.o" -o ../bin/test-roll  -Wl,-rpath,/home/runner/work/ggml-org-central/ggml-org-central/build/src ../src/libggml.so ../src/libggml-cpu.so ../src/libggml-base.so

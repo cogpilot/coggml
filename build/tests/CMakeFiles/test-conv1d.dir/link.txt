@@ -1,1 +1,0 @@
-/usr/bin/c++ -O3 -DNDEBUG -Wl,--dependency-file=CMakeFiles/test-conv1d.dir/link.d "CMakeFiles/test-conv1d.dir/test-conv1d.cpp.o" -o ../bin/test-conv1d  -Wl,-rpath,/home/runner/work/ggml-org-central/ggml-org-central/build/src ../src/libggml.so ../src/libggml-cpu.so ../src/libggml-base.so

@@ -1,1 +1,0 @@
-/usr/bin/c++ -O3 -DNDEBUG -Wl,--dependency-file=CMakeFiles/test-opt.dir/link.d "CMakeFiles/test-opt.dir/test-opt.cpp.o" -o ../bin/test-opt  -Wl,-rpath,/home/runner/work/ggml-org-central/ggml-org-central/build/src ../src/libggml.so ../src/libggml-cpu.so ../src/libggml-base.so
