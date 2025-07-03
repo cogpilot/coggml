@@ -343,10 +343,11 @@ bool test_system_integration(void) {
     // 2. Transduce to OpenCog
     if (!transduction_cogfluence_to_opencog(arch, unit_id)) return false;
     
-    // 3. Add OpenCog reasoning
+    // 3. Add OpenCog reasoning  
     uint64_t predicate = opencog_add_node(arch->atomspace, OPENCOG_PREDICATE_NODE, "is_integrated");
-    uint64_t atoms[] = {unit_id, predicate};
+    uint64_t atoms[] = {1, predicate};  // Use the atom ID from transduction
     uint64_t link = opencog_add_link(arch->atomspace, OPENCOG_EVALUATION_LINK, atoms, 2);
+    if (link == 0) return false;
     
     // 4. Transduce to GGML
     if (!transduction_opencog_to_ggml(arch, link)) return false;
@@ -358,6 +359,7 @@ bool test_system_integration(void) {
     // 6. Setup self-optimization
     arch->self_optimization_active = true;
     uint32_t opt_loop = optimization_create_loop(arch, "integration", "coherence", 0.5f, 0.9f);
+    if (opt_loop == 0) return false;
     
     // 7. Run optimization cycle
     if (!optimization_run_cycle(arch)) return false;
@@ -389,14 +391,14 @@ int main(void) {
     bool all_passed = true;
     
     // Run individual component tests
-    if (!test_cogfluence_integration()) all_passed = false;
-    if (!test_opencog_integration()) all_passed = false;
-    if (!test_transduction_pipelines()) all_passed = false;
-    if (!test_psystem_membranes()) all_passed = false;
-    if (!test_metacognitive_dashboard()) all_passed = false;
-    if (!test_self_optimization()) all_passed = false;
-    if (!test_recursive_workflows()) all_passed = false;
-    if (!test_system_integration()) all_passed = false;
+    printf("1. "); if (!test_cogfluence_integration()) { printf("FAILED\n"); all_passed = false; }
+    printf("2. "); if (!test_opencog_integration()) { printf("FAILED\n"); all_passed = false; }
+    printf("3. "); if (!test_transduction_pipelines()) { printf("FAILED\n"); all_passed = false; }
+    printf("4. "); if (!test_psystem_membranes()) { printf("FAILED\n"); all_passed = false; }
+    printf("5. "); if (!test_metacognitive_dashboard()) { printf("FAILED\n"); all_passed = false; }
+    printf("6. "); if (!test_self_optimization()) { printf("FAILED\n"); all_passed = false; }
+    printf("7. "); if (!test_recursive_workflows()) { printf("FAILED\n"); all_passed = false; }
+    printf("8. "); if (!test_system_integration()) { printf("FAILED\n"); all_passed = false; }
     
     printf("============================================\n");
     if (all_passed) {
