@@ -1,0 +1,6 @@
+set(TARGET cognitive-tensor-demo)
+add_executable(${TARGET} demo.c)
+target_link_libraries(${TARGET} PRIVATE ggml)
+if (MATH_LIBRARY)
+    target_link_libraries(${TARGET} PRIVATE ${MATH_LIBRARY})
+endif()

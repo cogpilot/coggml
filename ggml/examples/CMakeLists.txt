@@ -28,6 +28,7 @@ if (NOT GGML_BACKEND_DL)
     add_subdirectory(simple)
     add_subdirectory(magika)
     add_subdirectory(cognitive-agents)
+    add_subdirectory(cognitive-tensor-demo)
 endif()
 
 if (GGML_METAL)
