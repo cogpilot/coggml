@@ -326,4 +326,16 @@ if (NOT GGML_BACKEND_DL)
     target_link_libraries(${TEST_TARGET} PRIVATE ggml)
     add_test(NAME ${TEST_TARGET} COMMAND $<TARGET_FILE:${TEST_TARGET}>)
     set_property(TEST ${TEST_TARGET} PROPERTY ENVIRONMENT "LLVM_PROFILE_FILE=${TEST_TARGET}.profraw")
+
+    #
+    # test-cognitive-tensor
+
+    set(TEST_TARGET test-cognitive-tensor)
+    add_executable(${TEST_TARGET} ${TEST_TARGET}.c)
+    target_link_libraries(${TEST_TARGET} PRIVATE ggml)
+    if (MATH_LIBRARY)
+        target_link_libraries(${TEST_TARGET} PRIVATE ${MATH_LIBRARY})
+    endif()
+    add_test(NAME ${TEST_TARGET} COMMAND $<TARGET_FILE:${TEST_TARGET}>)
+    set_property(TEST ${TEST_TARGET} PROPERTY ENVIRONMENT "LLVM_PROFILE_FILE=${TEST_TARGET}.profraw")
 endif()
