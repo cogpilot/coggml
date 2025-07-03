@@ -1,6 +1,26 @@
 # Implementation Guide: Cognitive Agent Network
 
+## Table of Contents
+
+- [Overview](#overview)
+- [Quick Start](#quick-start)
+- [Core Components](#core-components)
+  - [Cognitive Agent Setup](#1-basic-cognitive-agent-setup)
+  - [Hypergraph Memory](#2-hypergraph-memory-implementation)
+  - [Cognitive Grammar System](#3-cognitive-grammar-system)
+  - [Distributed Communication](#4-distributed-agent-communication)
+  - [Attention Economy](#5-attention-economy-implementation)
+  - [Self-Modification](#6-self-modification-system)
+- [Complete Example](#example-complete-agent-network)
+- [Building the System](#building-the-system)
+- [Testing](#testing-cognitive-behaviors)
+
+## Overview
+
 This guide provides practical implementation details for creating a distributed network of cognitive agents using the existing ggml infrastructure.
+
+For architectural overview, see the [Distributed Cognitive Architecture](distributed-cognitive-architecture.md).
+For grammar usage examples, see the [Cognitive Grammar Examples](cognitive-grammar-examples.md).
 
 ## Quick Start
 

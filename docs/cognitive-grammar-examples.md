@@ -1,6 +1,23 @@
 # Cognitive Grammar Examples
 
+## Table of Contents
+
+- [Overview](#overview)
+- [Basic Cognitive Grammar Rules](#basic-cognitive-grammar-rules)
+  - [Task Decomposition Grammar](#1-task-decomposition-grammar)
+  - [Reasoning Pattern Grammar](#2-reasoning-pattern-grammar)
+  - [Attention Allocation Grammar](#3-attention-allocation-grammar)
+- [Practical Examples](#practical-examples)
+- [Integration with Code](#integration-with-code)
+- [Testing Cognitive Grammars](#testing-cognitive-grammars)
+- [Troubleshooting](#troubleshooting)
+
+## Overview
+
 This document provides practical examples of cognitive grammars that can be used with the distributed agent system, building on the existing GBNF grammar system in llama.cpp.
+
+For architectural context, see the [Distributed Cognitive Architecture](distributed-cognitive-architecture.md).
+For implementation details, see the [Implementation Guide](implementation-guide.md).
 
 ## Basic Cognitive Grammar Rules
 
@@ -462,5 +479,135 @@ void test_grammar_execution() {
     cleanup_grammar_parser(parser);
 }
 ```
+
+## Troubleshooting
+
+### Common Build Issues
+
+#### CMake Configuration Problems
+
+**Problem**: CMake fails to find required dependencies
+```bash
+CMake Error: Could not find cmake module file...
+```
+
+**Solution**: Ensure you have the minimum required CMake version (3.14+) and all prerequisites installed:
+```bash
+# Ubuntu/Debian
+sudo apt-get update
+sudo apt-get install cmake build-essential
+
+# macOS
+brew install cmake
+
+# Check CMake version
+cmake --version
+```
+
+#### Compilation Errors
+
+**Problem**: Compiler warnings about unused parameters or implicit conversions
+```bash
+warning: unused parameter 'ctx' [-Wunused-parameter]
+```
+
+**Solution**: These are expected warnings in the current implementation and do not affect functionality. To suppress them:
+```bash
+cmake .. -DCMAKE_CXX_FLAGS="-Wno-unused-parameter"
+```
+
+#### Missing Math Library
+
+**Problem**: Linker errors about undefined math functions
+```bash
+undefined reference to `sin'
+```
+
+**Solution**: Ensure the math library is linked (this should be automatic):
+```bash
+# If needed, add to CMakeLists.txt
+target_link_libraries(your_target m)
+```
+
+### Runtime Issues
+
+#### Memory Allocation Failures
+
+**Problem**: Agent creation fails with memory allocation errors
+```bash
+Failed to allocate memory for cognitive agent
+```
+
+**Solution**: Check available system memory and adjust context size:
+```c++
+// Reduce memory allocation in cognitive-agent.c
+agent->ctx = ggml_init({.mem_size = 64*1024*1024}); // Reduced from 128MB
+```
+
+#### Network Communication Problems
+
+**Problem**: Agents fail to communicate with each other
+```bash
+Agent communication timeout
+```
+
+**Solution**: Ensure firewall settings allow local communication or run agents on different ports:
+```c++
+// Use different ports for each agent
+cognitive_agent* agent1 = create_cognitive_agent("localhost:8001");
+cognitive_agent* agent2 = create_cognitive_agent("localhost:8002");
+```
+
+### Performance Issues
+
+#### Slow Attention Allocation
+
+**Problem**: Attention economy operations are slow
+```bash
+Attention allocation taking >100ms
+```
+
+**Solution**: Reduce the complexity of attention calculations or increase cache sizes:
+```c++
+// Optimize attention economy parameters
+attention->min_threshold = 0.1f; // Increase threshold
+attention->decay_rate = 0.95f;   // Faster decay
+```
+
+#### High Memory Usage
+
+**Problem**: Memory usage grows over time
+```bash
+Memory usage: 2GB+ after running for extended periods
+```
+
+**Solution**: Implement periodic memory cleanup:
+```c++
+// Add cleanup calls in main loop
+if (iteration % 1000 == 0) {
+    cleanup_stale_memory(agent);
+}
+```
+
+### Debug Mode
+
+To enable debug output for troubleshooting:
+
+```bash
+# Build with debug symbols
+cmake .. -DCMAKE_BUILD_TYPE=Debug
+
+# Run with debug output
+COGNITIVE_DEBUG=1 ./bin/cognitive-agents-demo
+```
+
+### Getting Help
+
+If you encounter issues not covered here:
+
+1. Check the [GitHub Issues](https://github.com/HyperCogWizard/flow-ml-org/issues) page
+2. Review the [Implementation Guide](docs/implementation-guide.md) for detailed setup instructions
+3. Consult the [ggml documentation](ggml/README.md) for low-level tensor operations
+4. Create a new issue with detailed error messages and system information
 
 This cognitive grammar system provides a structured way to express and execute complex cognitive behaviors while leveraging the existing GBNF infrastructure from llama.cpp. The grammars ensure that cognitive operations are syntactically valid and semantically meaningful within the distributed agent network.
