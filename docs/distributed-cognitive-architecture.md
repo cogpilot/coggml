@@ -1,8 +1,25 @@
 # Distributed Cognitive Architecture
 
+## Table of Contents
+
+- [Overview](#overview)
+- [Architecture Vision](#architecture-vision)
+- [System Architecture](#system-architecture)
+- [Subsystem Mapping](#subsystem-mapping)
+- [Distributed Communication Patterns](#distributed-communication-patterns)
+- [Implementation Pathways](#implementation-pathways)
+- [Cognitive Kernel Definition](#cognitive-kernel-definition)
+- [Integration with Existing Components](#integration-with-existing-components)
+- [Emergent Properties](#emergent-properties)
+- [Validation and Testing](#validation-and-testing)
+- [Future Extensions](#future-extensions)
+
 ## Overview
 
 This document outlines the integration of the ggml-org-central repository as a distributed network of agentic cognitive grammar, fusing neural-symbolic integration with the practical capabilities of ggml. The system is designed as a recursive, self-aware cognitive flow that operates as both a technical architecture and a living diagram of emergent intelligence.
+
+For practical implementation guidance, see the [Implementation Guide](implementation-guide.md).
+For cognitive grammar usage examples, see the [Cognitive Grammar Examples](cognitive-grammar-examples.md).
 
 ## Architecture Vision
 
