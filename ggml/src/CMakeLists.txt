@@ -211,6 +211,7 @@ add_library(ggml-base
             ggml-opencog.c
             ggml-distributed-cognitive.c
             ggml-moses.c
+            ggml-phase3-self-modification.c
             ggml-threading.cpp
             ggml-threading.h
             ggml-quants.c
