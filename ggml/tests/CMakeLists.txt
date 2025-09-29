@@ -376,6 +376,17 @@ if (NOT GGML_BACKEND_DL)
     set_property(TEST ${TEST_TARGET} PROPERTY ENVIRONMENT "LLVM_PROFILE_FILE=${TEST_TARGET}.profraw")
 
     #
+    # test-phase3-self-modification (Phase 3 Complete)
+
+    set(TEST_TARGET test-phase3-self-modification)
+    add_executable(${TEST_TARGET} ${TEST_TARGET}.c)
+    target_link_libraries(${TEST_TARGET} PRIVATE ggml)
+    if (MATH_LIBRARY)
+        target_link_libraries(${TEST_TARGET} PRIVATE ${MATH_LIBRARY})
+    endif()
+    add_test(NAME ${TEST_TARGET} COMMAND $<TARGET_FILE:${TEST_TARGET}>)
+    set_property(TEST ${TEST_TARGET} PROPERTY ENVIRONMENT "LLVM_PROFILE_FILE=${TEST_TARGET}.profraw")
+    #
     # test-financial-tensor
 
     set(TEST_TARGET test-financial-tensor)
