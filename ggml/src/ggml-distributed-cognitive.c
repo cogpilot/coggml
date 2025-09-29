@@ -650,3 +650,376 @@ bool distributed_cognitive_run_test_suite(distributed_cognitive_architecture_t* 
     
     return all_passed;
 }
+
+// Phase 2: Enhanced Distributed Communication Functions
+
+// Enhanced cognitive message packet for Phase 2
+typedef struct {
+    uint64_t source_agent_id;
+    uint64_t target_agent_id;
+    uint32_t message_type;
+    float attention_weight;
+    float salience_score;
+    uint32_t priority_level;
+    char cognitive_context[512];
+    
+    // PLN reasoning payload
+    opencog_truth_value_t truth_value;
+    uint32_t reasoning_depth;
+    
+    // MOSES optimization payload
+    float fitness_score;
+    uint32_t generation_id;
+    
+    // Tensor payload
+    struct ggml_tensor* tensor_data;
+    size_t tensor_size;
+    
+    // Routing metadata
+    uint32_t hop_count;
+    uint64_t timestamp;
+    char routing_path[256];
+} enhanced_cognitive_message_t;
+
+// Network topology node
+typedef struct network_node {
+    uint64_t agent_id;
+    char endpoint[256];
+    float reliability_score;
+    float response_time;
+    uint32_t connection_count;
+    bool is_active;
+    
+    // Cognitive specialization
+    float memory_capacity;
+    float reasoning_capability;
+    float attention_allocation;
+    
+    struct network_node* next;
+} network_node_t;
+
+// Enhanced cognitive network
+typedef struct {
+    network_node_t* nodes;
+    size_t node_count;
+    float network_coherence;
+    float communication_efficiency;
+    
+    // Routing tables
+    uint64_t** routing_matrix;
+    float** distance_matrix;
+    
+    // Network resilience
+    float fault_tolerance;
+    uint32_t redundancy_level;
+} enhanced_cognitive_network_t;
+
+// Initialize enhanced distributed communication
+enhanced_cognitive_network_t* enhanced_network_init(void) {
+    enhanced_cognitive_network_t* network = malloc(sizeof(enhanced_cognitive_network_t));
+    if (!network) return NULL;
+    
+    network->nodes = NULL;
+    network->node_count = 0;
+    network->network_coherence = 0.0f;
+    network->communication_efficiency = 0.0f;
+    
+    // Initialize routing structures
+    network->routing_matrix = NULL;
+    network->distance_matrix = NULL;
+    
+    network->fault_tolerance = 0.8f;      // 80% fault tolerance
+    network->redundancy_level = 2;        // 2-hop redundancy
+    
+    printf("Enhanced cognitive network initialized with fault tolerance\n");
+    
+    return network;
+}
+
+// Add agent to network topology
+bool enhanced_network_add_agent(
+    enhanced_cognitive_network_t* network,
+    uint64_t agent_id,
+    const char* endpoint,
+    float memory_capacity,
+    float reasoning_capability) {
+    
+    if (!network || !endpoint) return false;
+    
+    network_node_t* new_node = malloc(sizeof(network_node_t));
+    if (!new_node) return false;
+    
+    new_node->agent_id = agent_id;
+    strncpy(new_node->endpoint, endpoint, sizeof(new_node->endpoint) - 1);
+    new_node->endpoint[sizeof(new_node->endpoint) - 1] = '\0';
+    
+    new_node->reliability_score = 1.0f;
+    new_node->response_time = 0.1f;       // 100ms default
+    new_node->connection_count = 0;
+    new_node->is_active = true;
+    
+    new_node->memory_capacity = memory_capacity;
+    new_node->reasoning_capability = reasoning_capability;
+    new_node->attention_allocation = 0.5f;
+    
+    // Add to linked list
+    new_node->next = network->nodes;
+    network->nodes = new_node;
+    network->node_count++;
+    
+    printf("Added agent %lu to network topology (%s)\n", agent_id, endpoint);
+    
+    return true;
+}
+
+// Discover agents in network using cognitive capabilities
+uint64_t* enhanced_network_discover_agents(
+    enhanced_cognitive_network_t* network,
+    float min_memory_capacity,
+    float min_reasoning_capability,
+    size_t* result_count) {
+    
+    if (!network || !result_count) return NULL;
+    
+    *result_count = 0;
+    
+    // Count matching agents
+    size_t count = 0;
+    network_node_t* current = network->nodes;
+    while (current) {
+        if (current->is_active &&
+            current->memory_capacity >= min_memory_capacity &&
+            current->reasoning_capability >= min_reasoning_capability) {
+            count++;
+        }
+        current = current->next;
+    }
+    
+    if (count == 0) return NULL;
+    
+    uint64_t* results = malloc(count * sizeof(uint64_t));
+    if (!results) return NULL;
+    
+    size_t idx = 0;
+    current = network->nodes;
+    while (current && idx < count) {
+        if (current->is_active &&
+            current->memory_capacity >= min_memory_capacity &&
+            current->reasoning_capability >= min_reasoning_capability) {
+            results[idx++] = current->agent_id;
+        }
+        current = current->next;
+    }
+    
+    *result_count = count;
+    
+    printf("Discovered %zu agents with memory>=%.1f, reasoning>=%.1f\n", 
+           count, min_memory_capacity, min_reasoning_capability);
+    
+    return results;
+}
+
+// Route cognitive message with attention-based priority
+bool enhanced_network_route_message(
+    enhanced_cognitive_network_t* network,
+    enhanced_cognitive_message_t* message) {
+    
+    if (!network || !message) return false;
+    
+    // Find target node
+    network_node_t* target = network->nodes;
+    while (target && target->agent_id != message->target_agent_id) {
+        target = target->next;
+    }
+    
+    if (!target || !target->is_active) {
+        printf("Target agent %lu not found or inactive\n", message->target_agent_id);
+        return false;
+    }
+    
+    // Attention-based routing priority
+    float routing_priority = message->attention_weight * message->salience_score;
+    
+    // Update routing metadata
+    message->hop_count++;
+    message->timestamp = (uint64_t)time(NULL);
+    
+    // Simulate message delivery based on attention priority
+    float delivery_probability = target->reliability_score * (0.5f + routing_priority * 0.5f);
+    
+    if ((float)rand() / RAND_MAX < delivery_probability) {
+        printf("Message routed successfully from %lu to %lu (priority: %.2f)\n",
+               message->source_agent_id, message->target_agent_id, routing_priority);
+        
+        // Update network statistics
+        network->communication_efficiency = 
+            network->communication_efficiency * 0.9f + delivery_probability * 0.1f;
+        
+        return true;
+    } else {
+        printf("Message routing failed from %lu to %lu\n", 
+               message->source_agent_id, message->target_agent_id);
+        return false;
+    }
+}
+
+// Coordinate distributed reasoning across network
+bool enhanced_network_coordinate_reasoning(
+    enhanced_cognitive_network_t* network,
+    const char* reasoning_task,
+    uint64_t coordinator_agent_id) {
+    
+    if (!network || !reasoning_task) return false;
+    
+    printf("Coordinating distributed reasoning: '%s' (coordinator: %lu)\n", 
+           reasoning_task, coordinator_agent_id);
+    
+    // Find agents with high reasoning capability
+    size_t agent_count;
+    uint64_t* capable_agents = enhanced_network_discover_agents(
+        network, 0.3f, 0.7f, &agent_count);
+    
+    if (!capable_agents || agent_count == 0) {
+        printf("No capable agents found for reasoning coordination\n");
+        return false;
+    }
+    
+    // Distribute reasoning tasks
+    for (size_t i = 0; i < agent_count; i++) {
+        enhanced_cognitive_message_t message = {0};
+        message.source_agent_id = coordinator_agent_id;
+        message.target_agent_id = capable_agents[i];
+        message.message_type = 3;  // Reasoning task
+        message.attention_weight = 0.8f;
+        message.salience_score = 0.9f;
+        message.priority_level = 1;  // High priority
+        message.reasoning_depth = 2;
+        
+        snprintf(message.cognitive_context, sizeof(message.cognitive_context),
+                "REASONING_TASK: %s (subtask %zu/%zu)", reasoning_task, i + 1, agent_count);
+        
+        bool sent = enhanced_network_route_message(network, &message);
+        if (sent) {
+            printf("  Subtask %zu assigned to agent %lu\n", i + 1, capable_agents[i]);
+        }
+    }
+    
+    free(capable_agents);
+    
+    printf("Distributed reasoning coordination completed\n");
+    
+    return true;
+}
+
+// Network resilience and fault tolerance
+bool enhanced_network_handle_failure(
+    enhanced_cognitive_network_t* network,
+    uint64_t failed_agent_id) {
+    
+    if (!network) return false;
+    
+    // Find and mark agent as inactive
+    network_node_t* current = network->nodes;
+    while (current) {
+        if (current->agent_id == failed_agent_id) {
+            current->is_active = false;
+            current->reliability_score *= 0.5f;  // Reduce reliability
+            
+            printf("Handling failure of agent %lu\n", failed_agent_id);
+            
+            // Attempt to redistribute load to other agents
+            size_t active_count;
+            uint64_t* active_agents = enhanced_network_discover_agents(
+                network, 0.2f, 0.2f, &active_count);
+            
+            if (active_agents && active_count > 0) {
+                printf("Redistributing load to %zu active agents\n", active_count);
+                
+                // Update attention allocation for remaining agents
+                for (size_t i = 0; i < active_count; i++) {
+                    network_node_t* node = network->nodes;
+                    while (node && node->agent_id != active_agents[i]) {
+                        node = node->next;
+                    }
+                    if (node) {
+                        node->attention_allocation += 0.1f;  // Increase attention
+                        node->attention_allocation = fminf(1.0f, node->attention_allocation);
+                    }
+                }
+                
+                free(active_agents);
+                return true;
+            } else {
+                printf("WARNING: No active agents available for load redistribution\n");
+                return false;
+            }
+        }
+        current = current->next;
+    }
+    
+    printf("Agent %lu not found in network\n", failed_agent_id);
+    return false;
+}
+
+// Calculate network coherence metrics
+float enhanced_network_calculate_coherence(enhanced_cognitive_network_t* network) {
+    if (!network || network->node_count == 0) return 0.0f;
+    
+    float total_reliability = 0.0f;
+    float total_reasoning = 0.0f;
+    size_t active_count = 0;
+    
+    network_node_t* current = network->nodes;
+    while (current) {
+        if (current->is_active) {
+            total_reliability += current->reliability_score;
+            total_reasoning += current->reasoning_capability;
+            active_count++;
+        }
+        current = current->next;
+    }
+    
+    if (active_count == 0) return 0.0f;
+    
+    float avg_reliability = total_reliability / active_count;
+    float avg_reasoning = total_reasoning / active_count;
+    
+    // Network coherence combines reliability, reasoning capability, and communication efficiency
+    network->network_coherence = (avg_reliability + avg_reasoning + network->communication_efficiency) / 3.0f;
+    
+    return network->network_coherence;
+}
+
+// Print enhanced network statistics
+void enhanced_network_print_stats(enhanced_cognitive_network_t* network) {
+    if (!network) return;
+    
+    printf("\n=== Enhanced Cognitive Network Statistics ===\n");
+    printf("Total nodes: %zu\n", network->node_count);
+    
+    size_t active_count = 0;
+    float total_memory = 0.0f;
+    float total_reasoning = 0.0f;
+    
+    network_node_t* current = network->nodes;
+    while (current) {
+        if (current->is_active) {
+            active_count++;
+            total_memory += current->memory_capacity;
+            total_reasoning += current->reasoning_capability;
+        }
+        current = current->next;
+    }
+    
+    printf("Active nodes: %zu\n", active_count);
+    printf("Network coherence: %.3f\n", network->network_coherence);
+    printf("Communication efficiency: %.3f\n", network->communication_efficiency);
+    printf("Fault tolerance: %.1f%%\n", network->fault_tolerance * 100);
+    
+    if (active_count > 0) {
+        printf("Average memory capacity: %.3f\n", total_memory / active_count);
+        printf("Average reasoning capability: %.3f\n", total_reasoning / active_count);
+    }
+    
+    printf("============================================\n");
+}

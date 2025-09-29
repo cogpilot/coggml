@@ -448,6 +448,196 @@ uint64_t opencog_from_cogfluence_unit(
     return atom_id;
 }
 
+// PLN Inheritance inference: A->B, B->C => A->C
+bool opencog_infer_inheritance(
+    opencog_atomspace_t* atomspace,
+    uint64_t concept_a,
+    uint64_t concept_b,
+    uint64_t concept_c) {
+    
+    if (!atomspace) return false;
+    
+    // Find inheritance links A->B and B->C
+    uint64_t ab_link = 0, bc_link = 0;
+    
+    for (size_t i = 0; i < atomspace->atom_count; i++) {
+        opencog_atom_t* atom = &atomspace->atoms[i];
+        if (atom->is_deleted || atom->type != OPENCOG_INHERITANCE_LINK) continue;
+        
+        if (atom->outgoing_count >= 2) {
+            if (atom->outgoing[0] == concept_a && atom->outgoing[1] == concept_b) {
+                ab_link = atom->atom_id;
+            }
+            if (atom->outgoing[0] == concept_b && atom->outgoing[1] == concept_c) {
+                bc_link = atom->atom_id;
+            }
+        }
+    }
+    
+    if (ab_link == 0 || bc_link == 0) return false;
+    
+    // Get truth values
+    opencog_truth_value_t tv_ab = opencog_get_truth_value(atomspace, ab_link);
+    opencog_truth_value_t tv_bc = opencog_get_truth_value(atomspace, bc_link);
+    
+    // PLN deduction rule: combine truth values
+    opencog_truth_value_t tv_result;
+    tv_result.strength = tv_ab.strength * tv_bc.strength;
+    tv_result.confidence = (tv_ab.confidence * tv_bc.confidence) / 
+                          (tv_ab.confidence + tv_bc.confidence - tv_ab.confidence * tv_bc.confidence);
+    tv_result.count = fminf(tv_ab.count, tv_bc.count);
+    
+    // Create A->C inheritance link if it doesn't exist
+    uint64_t outgoing[] = {concept_a, concept_c};
+    uint64_t ac_link = opencog_add_link(atomspace, OPENCOG_INHERITANCE_LINK, outgoing, 2);
+    
+    if (ac_link > 0) {
+        opencog_set_truth_value(atomspace, ac_link, tv_result.strength, tv_result.confidence);
+        atomspace->total_inferences++;
+        atomspace->successful_inferences++;
+        
+        // Update reasoning accuracy
+        atomspace->reasoning_accuracy = (float)atomspace->successful_inferences / 
+                                       (float)atomspace->total_inferences;
+        
+        printf("PLN Inference: %lu->%lu (%.2f, %.2f)\n", 
+               concept_a, concept_c, tv_result.strength, tv_result.confidence);
+        return true;
+    }
+    
+    atomspace->total_inferences++;
+    return false;
+}
+
+// PLN Similarity inference: compute similarity between concepts
+bool opencog_infer_similarity(
+    opencog_atomspace_t* atomspace,
+    uint64_t concept_a,
+    uint64_t concept_b) {
+    
+    if (!atomspace) return false;
+    
+    // Count common inheritance relationships
+    float common_relations = 0.0f;
+    float total_a_relations = 0.0f;
+    float total_b_relations = 0.0f;
+    
+    for (size_t i = 0; i < atomspace->atom_count; i++) {
+        opencog_atom_t* atom = &atomspace->atoms[i];
+        if (atom->is_deleted || atom->type != OPENCOG_INHERITANCE_LINK) continue;
+        
+        if (atom->outgoing_count >= 2) {
+            bool a_related = (atom->outgoing[0] == concept_a || atom->outgoing[1] == concept_a);
+            bool b_related = (atom->outgoing[0] == concept_b || atom->outgoing[1] == concept_b);
+            
+            if (a_related && b_related) {
+                common_relations += atom->truth_value.strength;
+            }
+            if (a_related) {
+                total_a_relations += atom->truth_value.strength;
+            }
+            if (b_related) {
+                total_b_relations += atom->truth_value.strength;
+            }
+        }
+    }
+    
+    // Jaccard similarity with PLN truth values
+    float similarity_strength = 0.0f;
+    if (total_a_relations + total_b_relations - common_relations > 0.0f) {
+        similarity_strength = common_relations / (total_a_relations + total_b_relations - common_relations);
+    }
+    
+    // Create similarity link if significant
+    if (similarity_strength > 0.1f) {
+        uint64_t outgoing[] = {concept_a, concept_b};
+        uint64_t sim_link = opencog_add_link(atomspace, OPENCOG_SIMILARITY_LINK, outgoing, 2);
+        
+        if (sim_link > 0) {
+            float confidence = fminf(0.9f, common_relations / 10.0f);  // Confidence based on evidence
+            opencog_set_truth_value(atomspace, sim_link, similarity_strength, confidence);
+            
+            atomspace->total_inferences++;
+            atomspace->successful_inferences++;
+            atomspace->reasoning_accuracy = (float)atomspace->successful_inferences / 
+                                           (float)atomspace->total_inferences;
+            
+            printf("PLN Similarity: %lu<->%lu (%.2f, %.2f)\n", 
+                   concept_a, concept_b, similarity_strength, confidence);
+            return true;
+        }
+    }
+    
+    atomspace->total_inferences++;
+    return false;
+}
+
+// Compute similarity between atoms based on their tensor representations
+float opencog_compute_similarity(
+    opencog_atomspace_t* atomspace,
+    uint64_t atom1_id,
+    uint64_t atom2_id) {
+    
+    if (!atomspace) return 0.0f;
+    
+    opencog_atom_t* atom1 = opencog_get_atom(atomspace, atom1_id);
+    opencog_atom_t* atom2 = opencog_get_atom(atomspace, atom2_id);
+    
+    if (!atom1 || !atom2) return 0.0f;
+    
+    // If both have tensor encodings, compute cosine similarity
+    if (atom1->tensor_encoding && atom2->tensor_encoding) {
+        struct ggml_tensor* t1 = atom1->tensor_encoding;
+        struct ggml_tensor* t2 = atom2->tensor_encoding;
+        
+        if (ggml_nelements(t1) != ggml_nelements(t2)) return 0.0f;
+        
+        float* data1 = (float*)t1->data;
+        float* data2 = (float*)t2->data;
+        
+        float dot_product = 0.0f;
+        float norm1 = 0.0f;
+        float norm2 = 0.0f;
+        
+        int64_t n_elements = ggml_nelements(t1);
+        for (int64_t i = 0; i < n_elements; i++) {
+            dot_product += data1[i] * data2[i];
+            norm1 += data1[i] * data1[i];
+            norm2 += data2[i] * data2[i];
+        }
+        
+        if (norm1 > 0.0f && norm2 > 0.0f) {
+            return dot_product / (sqrtf(norm1) * sqrtf(norm2));
+        }
+    }
+    
+    // Fallback: compute similarity based on shared relationships
+    float shared_relations = 0.0f;
+    float total_relations = 0.0f;
+    
+    for (size_t i = 0; i < atomspace->atom_count; i++) {
+        opencog_atom_t* atom = &atomspace->atoms[i];
+        if (atom->is_deleted || atom->outgoing_count < 2) continue;
+        
+        bool has_atom1 = false;
+        bool has_atom2 = false;
+        
+        for (size_t j = 0; j < atom->outgoing_count; j++) {
+            if (atom->outgoing[j] == atom1_id) has_atom1 = true;
+            if (atom->outgoing[j] == atom2_id) has_atom2 = true;
+        }
+        
+        if (has_atom1 && has_atom2) {
+            shared_relations += atom->truth_value.strength;
+        }
+        if (has_atom1 || has_atom2) {
+            total_relations += atom->truth_value.strength;
+        }
+    }
+    
+    return (total_relations > 0.0f) ? shared_relations / total_relations : 0.0f;
+}
+
 // Convert atom to tensor
 struct ggml_tensor* opencog_atom_to_tensor(
     opencog_atomspace_t* atomspace,
@@ -466,6 +656,159 @@ struct ggml_tensor* opencog_atom_to_tensor(
     
     return tensor;
 }
+
+// Convert tensor to atom
+uint64_t opencog_tensor_to_atom(
+    opencog_atomspace_t* atomspace,
+    struct ggml_tensor* tensor,
+    const char* name) {
+    
+    if (!atomspace || !tensor || !name) return 0;
+    
+    uint64_t atom_id = opencog_add_node(atomspace, OPENCOG_CONCEPT_NODE, name);
+    if (atom_id == 0) return 0;
+    
+    opencog_atom_t* atom = opencog_get_atom(atomspace, atom_id);
+    if (atom) {
+        atom->tensor_encoding = ggml_dup(atomspace->ctx, tensor);
+    }
+    
+    return atom_id;
+}
+
+// Query atoms by type
+uint64_t* opencog_query_by_type(
+    opencog_atomspace_t* atomspace,
+    opencog_atom_type_t type,
+    size_t* result_count) {
+    
+    if (!atomspace || !result_count) return NULL;
+    
+    *result_count = 0;
+    
+    // Count matching atoms
+    size_t count = 0;
+    for (size_t i = 0; i < atomspace->atom_count; i++) {
+        if (!atomspace->atoms[i].is_deleted && atomspace->atoms[i].type == type) {
+            count++;
+        }
+    }
+    
+    if (count == 0) return NULL;
+    
+    uint64_t* results = malloc(count * sizeof(uint64_t));
+    if (!results) return NULL;
+    
+    size_t idx = 0;
+    for (size_t i = 0; i < atomspace->atom_count; i++) {
+        if (!atomspace->atoms[i].is_deleted && atomspace->atoms[i].type == type) {
+            results[idx++] = atomspace->atoms[i].atom_id;
+        }
+    }
+    
+    *result_count = count;
+    return results;
+}
+
+// Query atoms by name
+uint64_t* opencog_query_by_name(
+    opencog_atomspace_t* atomspace,
+    const char* name,
+    size_t* result_count) {
+    
+    if (!atomspace || !name || !result_count) return NULL;
+    
+    *result_count = 0;
+    
+    // Count matching atoms
+    size_t count = 0;
+    for (size_t i = 0; i < atomspace->atom_count; i++) {
+        if (!atomspace->atoms[i].is_deleted && 
+            strcmp(atomspace->atoms[i].name, name) == 0) {
+            count++;
+        }
+    }
+    
+    if (count == 0) return NULL;
+    
+    uint64_t* results = malloc(count * sizeof(uint64_t));
+    if (!results) return NULL;
+    
+    size_t idx = 0;
+    for (size_t i = 0; i < atomspace->atom_count; i++) {
+        if (!atomspace->atoms[i].is_deleted && 
+            strcmp(atomspace->atoms[i].name, name) == 0) {
+            results[idx++] = atomspace->atoms[i].atom_id;
+        }
+    }
+    
+    *result_count = count;
+    return results;
+}
+
+// Query incoming links
+uint64_t* opencog_query_incoming(
+    opencog_atomspace_t* atomspace,
+    uint64_t atom_id,
+    size_t* result_count) {
+    
+    if (!atomspace || !result_count) return NULL;
+    
+    opencog_atom_t* atom = opencog_get_atom(atomspace, atom_id);
+    if (!atom) {
+        *result_count = 0;
+        return NULL;
+    }
+    
+    if (atom->incoming_count == 0) {
+        *result_count = 0;
+        return NULL;
+    }
+    
+    uint64_t* results = malloc(atom->incoming_count * sizeof(uint64_t));
+    if (!results) {
+        *result_count = 0;
+        return NULL;
+    }
+    
+    memcpy(results, atom->incoming, atom->incoming_count * sizeof(uint64_t));
+    *result_count = atom->incoming_count;
+    
+    return results;
+}
+
+// Query outgoing links
+uint64_t* opencog_query_outgoing(
+    opencog_atomspace_t* atomspace,
+    uint64_t atom_id,
+    size_t* result_count) {
+    
+    if (!atomspace || !result_count) return NULL;
+    
+    opencog_atom_t* atom = opencog_get_atom(atomspace, atom_id);
+    if (!atom) {
+        *result_count = 0;
+        return NULL;
+    }
+    
+    if (atom->outgoing_count == 0) {
+        *result_count = 0;
+        return NULL;
+    }
+    
+    uint64_t* results = malloc(atom->outgoing_count * sizeof(uint64_t));
+    if (!results) {
+        *result_count = 0;
+        return NULL;
+    }
+    
+    memcpy(results, atom->outgoing, atom->outgoing_count * sizeof(uint64_t));
+    *result_count = atom->outgoing_count;
+    
+    return results;
+}
+
+// Enhanced integration functions are now properly implemented above
 
 // Print atom
 void opencog_print_atom(
